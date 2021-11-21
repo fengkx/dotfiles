@@ -1,0 +1,52 @@
+{
+  "editor.fontFamily": "'JetBrainsMonoMedium Nerd Font Mono','Droid Sans Mono'",
+  "window.zoomLevel": 1.5,
+  "editor.fontSize": 14,
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.formatOnSave": true,
+  "latex.server.autoDownload": true,
+  "latex-workshop.latex.tools": [
+    {
+      "name": "xelatex",
+      "command": "xelatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "-outdir=%OUTDIR%",
+        "-cd",
+        "%DOC%"
+      ],
+      "env": {}
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "xelatex",
+      "tools": ["xelatex"]
+    }
+  ],
+  "latex-workshop.view.pdf.viewer": "tab",
+  "emmet.triggerExpansionOnTab": true,
+  "http.proxySupport": "on",
+  "http.proxy": "http://127.0.0.1:7890",
+  "python.dataScience.askForKernelRestart": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "mjohns.clang-format"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // "terminal.integrated.defaultProfile.linux": "zsh",
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorBlinking": "phase"
+}
