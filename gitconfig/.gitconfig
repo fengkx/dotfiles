@@ -1,0 +1,18 @@
+[user]
+	email = liangkx8237@gmail.com
+	name = fengkx
+	signingkey = 2C025B821032A446
+[color]
+	ui = true
+[commit]
+	gpgsign = true
+[core]
+	quotepath = false
+	pager = diff-so-fancy | less --tabs=1,5 -R
+[pager]
+	diff = diff-so-fancy | less --tabs=1,5 -RFX
+	show = diff-so-fancy | less --tabs=1,5 -RFX
+[pull]
+	rebase = true
+[init]
+	defaultBranch = master
