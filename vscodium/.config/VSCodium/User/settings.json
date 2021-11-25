@@ -1,6 +1,5 @@
 {
   "editor.fontFamily": "'JetBrainsMonoMedium Nerd Font Mono','Droid Sans Mono'",
-  "window.zoomLevel": 1.5,
   "editor.fontSize": 14,
   "workbench.iconTheme": "material-icon-theme",
   "editor.formatOnSave": true,
@@ -48,5 +47,6 @@
   },
   // "terminal.integrated.defaultProfile.linux": "zsh",
   "editor.cursorSmoothCaretAnimation": true,
-  "editor.cursorBlinking": "phase"
+  "editor.cursorBlinking": "phase",
+  "window.zoomLevel": 1
 }
