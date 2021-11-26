@@ -1,0 +1,19 @@
+{
+    "editor.fontSize": 14,
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "eslint.alwaysShowStatus": true,
+    "eslint.format.enable": true,
+    "emmet.triggerExpansionOnTab": true,
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "window.zoomLevel": 1
+}
