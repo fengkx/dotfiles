@@ -1,2 +1,4 @@
 ssh/*
 !ssh/*.enc
+rclone/*
+!rclone/*.enc
