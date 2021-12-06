@@ -16,3 +16,9 @@
 	rebase = true
 [init]
 	defaultBranch = master
+
+[includeIf "gitdir:~/lowcode/"]
+	path = ~/lowcode/.gitconfig-work
+
+[includeIf "gitdir:~/me/code/"]
+	path = "~/me/code/.gitconfig-me"
