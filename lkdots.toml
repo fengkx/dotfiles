@@ -51,7 +51,6 @@ platforms = ["linux"]
 [[entries]]
 from = "~/dotfiles/gitconfig"
 to = "~"
-platforms = ["linux"]
 
 [[entries]]
 from = "~/dotfiles/electron"
