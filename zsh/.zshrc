@@ -111,7 +111,7 @@ alias ls=exa
 alias cat=bat
 alias vim=nvim
 alias gnome-terminal=deepin-terminal
-export DEFAULT_PROXY=http://127.0.0.1:7890
+export SHELLPROXY_URL=http://127.0.0.1:7890
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
