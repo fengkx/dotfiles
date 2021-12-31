@@ -19,8 +19,9 @@
     "github.copilot.enable": {
         "*": true,
         "yaml": true,
-        "plaintext": false,
-        "markdown": true
+        "plaintext": true,
+        "markdown": true,
+        "json": false
     },
     "window.zoomLevel": 1
 }
