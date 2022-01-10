@@ -1,8 +1,6 @@
 {
-  "editor.fontFamily": "'JetBrainsMonoMedium Nerd Font Mono','Droid Sans Mono'",
   "editor.fontSize": 14,
   "workbench.iconTheme": "material-icon-theme",
-  "editor.formatOnSave": true,
   "latex.server.autoDownload": true,
   "latex-workshop.latex.tools": [
     {
@@ -28,7 +26,7 @@
   ],
   "latex-workshop.view.pdf.viewer": "tab",
   "emmet.triggerExpansionOnTab": true,
-  "http.proxySupport": "on",
+  "http.proxySupport": "fallback",
   "http.proxy": "http://127.0.0.1:7890",
   "python.dataScience.askForKernelRestart": false,
   "[typescript]": {
@@ -47,12 +45,34 @@
   },
   "editor.cursorSmoothCaretAnimation": true,
   "editor.cursorBlinking": "phase",
-  "window.zoomLevel": 1,
   "editor.bracketPairColorization.enabled": true,
+  "files.associations": {
+    "tsconfig.json": "jsonc",
+    "*.wxss": "css"
+  },
   "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.profiles.linux": {
     "zsh": {
       "path": "/bin/zsh"
+    },
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+      "*": true,
+      "yaml": true,
+      "plaintext": true,
+      "markdown": true,
+      "json": false
     }
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorTheme": "GitHub Dark",
+  "dprint.path": "~/.volta/bin/dprint",
+  "terminal.integrated.scrollback": 5000,
+  "window.zoomLevel": 1,
+  "editor.fontFamily": "'JetBrainsMono Nerd Font Mono' ,'Droid Sans Mono', 'monospace', monospace",
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

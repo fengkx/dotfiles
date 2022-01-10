@@ -28,20 +28,17 @@ from = "~/dotfiles/pip"
 to = "~/.config/pip"
 
 [[entries]]
-from = "~/dotfiles/cargo/.cargo"
-to = "~/.cargo"
+from = "~/dotfiles/cargo/.cargo/config"
+to = "~/.cargo/config"
 
 [[entries]]
-from = "~/dotfiles/local-bin"
-to = "~"
+from = "~/dotfiles/local-bin/.local/bin"
+to = "~/.local/bin"
 
 [[entries]]
 from = "~/dotfiles/zsh"
 to = "~"
 
-[[entries]]
-from = "~/dotfiles/htop"
-to = "~"
 
 [[entries]]
 from = "~/dotfiles/deepin-terminal-gtk"
@@ -74,4 +71,43 @@ platforms = ["darwin"]
 from = "~/dotfiles/rclone"
 to = "~/.config/rclone"
 platforms = ["linux"]
+encrypt = true
+
+[[entries]]
+from = "~/dotfiles/dot_profile"
+to = "~/.profile"
+platforms = ["linux"]
+
+[[entries]]
+from = "~/dotfiles/dockerfiles"
+to = "~/.dockerfiles"
+
+[[entries]]
+from = "~/dotfiles/htop"
+to = "~"
+platforms = ["linux", "darwin"]
+
+[[entries]]
+from = "~/dotfiles/kitty"
+to = "~/.config/kitty"
+platforms = ["linux", "darwin"]
+
+[[entries]]
+from = "~/dotfiles/wezterm"
+to = "~/.config/wezterm"
+platforms = ["linux", "darwin"]
+
+[[entries]]
+from = "~/dotfiles/ranger"
+to = "~/.config/ranger"
+platforms = ["linux", "darwin"]
+
+[[entries]]
+from = "~/dotfiles/launchctl/local.fengkx.colima.plist"
+to = "~/Library/LaunchAgents/local.fengkx.colima.plist"
+platforms = ["darwin"]
+
+[[entries]]
+from = "~/dotfiles/RimeSync/mac/custom_phrase.txt"
+to = "/tmp/_a"
 encrypt = true

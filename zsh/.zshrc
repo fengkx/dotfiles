@@ -75,17 +75,31 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git shell-proxy sudo z fast-syntax-highlighting)
+plugins=(
+	git
+	git-extras
+	shell-proxy
+	sudo
+	z
+	fast-syntax-highlighting
+	zsh-autosuggestions
+	fzf-tab
+	ssh-agent
+)
+
+# ssh-agent settings
+zstyle :omz:plugins:ssh-agent lazy yes
+zstyle :omz:plugins:ssh-agent quiet yes
+
 
 source $ZSH/oh-my-zsh.sh
-export PATH="$PATH:$HOME/.cargo/bin:$HOME/.local/bin"
 
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -111,14 +125,16 @@ alias ls=exa
 alias cat=bat
 alias vim=nvim
 alias gnome-terminal=deepin-terminal
+alias dgd='GIT_EXTERNAL_DIFF=difft git diff'
 export SHELLPROXY_URL=http://127.0.0.1:7890
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-eval "$(fnm env)"
-eval "$(fnm completions --shell bash)"
-alias open="xdg-open 2>/dev/null"
+OS="$(uname -s)"
+if test "$OS" = "Linux"; then
+	alias open="xdg-open 2>/dev/null"
+fi
 
 # >>>> Vagrant command completion (start)
 fpath=(/opt/vagrant/embedded/gems/2.2.14/gems/vagrant-2.2.14/contrib/zsh $fpath)
@@ -135,5 +151,105 @@ extract() {
   fi
 }
 
-eval "$(doko completion --shell bash)"
+(( $+commands[doko] )) && eval "$(doko completion --shell bash)"
+
+#history
+HISTSIZE=50000
+SAVEHIST=10000
+
 source ~/.profile
+
+# workaround for firefox bug
+# https://bugzilla.mozilla.org/show_bug.cgi?id=1751363
+export MOZ_DISABLE_RDD_SANDBOX=1
+
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+
+# pnpm
+if [[ "$OSTYPE" = darwin* ]]; then
+	export PNPM_HOME="$HOME/Library/pnpm"
+fi
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
+if [[ "$OSTYPE" = darwin* ]]; then
+	# MacPorts Installer addition on 2023-02-10_at_22:24:02: adding an appropriate PATH variable for use with MacPorts.
+	export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+	# Finished adapting your PATH environment variable for use with MacPorts.
+	if [[ -f /opt/homebrew/bin/brew ]]; then
+		eval "$(/opt/homebrew/bin/brew shellenv)"
+	fi
+
+fi
+
+# Lazyload Function
+
+## Setup a mock function for lazyload
+## Usage:
+## 1. Define function "_sukka_lazyload_command_[command name]" that will init the command
+## 2. sukka_lazyload_add_command [command name]
+sukka_lazyload_add_command() {
+    eval "$1() { \
+        unfunction $1; \
+        _sukka_lazyload_command_$1; \
+        $1 \$@; \
+    }"
+}
+## Setup autocompletion for lazyload
+## Usage:
+## 1. Define function "_sukka_lazyload_completion_[command name]" that will init the autocompletion
+## 2. sukka_lazyload_add_comp [command name]
+sukka_lazyload_add_completion() {
+    local comp_name="_sukka_lazyload__compfunc_$1"
+    eval "${comp_name}() { \
+        compdef -d $1; \
+        _sukka_lazyload_completion_$1; \
+    }"
+    compdef $comp_name $1
+}
+
+
+# thefuck
+## Lazyload thefuck
+if (( $+commands[thefuck] )) &>/dev/null; then
+    _sukka_lazyload_command_fuck() {
+        eval $(thefuck --alias)
+    }
+
+    sukka_lazyload_add_command fuck
+fi
+
+# pyenv lazyload
+## Lazyload pyenv
+if (( $+commands[pyenv] )) &>/dev/null; then
+    _sukka_lazyload_command_pyenv() {
+        export PATH="${PYENV_ROOT}/bin:${PYENV_ROOT}/shims:${PATH}" # pyenv init --path
+        eval "$(command pyenv init -)"
+    }
+    sukka_lazyload_add_command pyenv
+
+    _sukka_lazyload_completion_pyenv() {
+        source "${__SUKKA_HOMEBREW_PYENV_PREFIX}/completions/pyenv.zsh"
+    }
+    sukka_lazyload_add_completion pyenv
+
+    export PYENV_ROOT="${PYENV_ROOT:=${HOME}/.pyenv}"
+fi
+
+
+# bun completions
+[ -s "/Users/fengkx/.bun/_bun" ] && source "/Users/fengkx/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
+export LESSCHARSET=utf-8
+
+if [[ "$OSTYPE" = darwin* ]]; then
+	export DOCKER_HOST=unix://$HOME/.colima/default/docker.sock
+fi
+alias lzd='lazydocker'
+alias lzg='lazygit'

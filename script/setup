@@ -1,0 +1,106 @@
+#!/bin/zsh
+
+
+setup_omz() {
+  echo "==========================================================="
+  echo "                      Shells Enviroment"
+  echo "-----------------------------------------------------------"
+  echo "* Installing Oh-My-Zsh..."
+  echo "-----------------------------------------------------------"
+
+  mv -f ~/.oh-my-zsh ~/.oh-my-zsh.old
+
+  curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | bash
+
+  echo "-----------------------------------------------------------"
+  echo "* Installing ZSH Custom Plugins & Themes:"
+  echo ""
+  echo "  - zsh-autosuggestions"
+  echo "  - fast-syntax-highlighting"
+  echo "  - p10k zsh-theme"
+  echo "  - zsh-z"
+  echo "  - fzf-tab"
+  echo "-----------------------------------------------------------"
+
+  git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom/}/plugins/fzf-tab
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
+
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+}
+
+clear_existed_dot() {
+    echo "-----------------------------------------------------------"
+    echo "* Clear existed dotfile"
+    echo "-----------------------------------------------------------"
+
+    mv -f "$HOME/.bashrc" "$HOME/.bashrc.old" 
+    mv -f "$HOME/.bash_profile" "$HOME/.bash_profile.old"
+    mv -f "$HOME/.zshrc" "$HOME/.zshrc.old"
+}
+
+init_lkdots() {
+    echo "-----------------------------------------------------------"
+    echo "* Init lkdots"
+    echo "-----------------------------------------------------------"
+
+    cd "$HOME/dotfiles"
+    lkdots
+}
+
+clone_repo() {
+  echo "-----------------------------------------------------------"
+  echo "* Cloning dotfiles Repo from GitHub.com"
+  echo "-----------------------------------------------------------"
+
+  if [ ! -d ~/dotfiles ]
+  then
+    git clone https://github.com/fengkx/dotfiles.git ~/dotfiles
+  fi
+
+  cd ~/dotfiles
+}
+
+install_nodejs() {
+  echo "==========================================================="
+  echo "              Setting up NodeJS Environment"
+  echo "-----------------------------------------------------------"
+  echo "* Installing NodeJS LTS..."
+  echo "-----------------------------------------------------------"
+  volta install node@lts
+  __npm_global_pkgs=(
+    npm-check-updates
+    whistle
+    pnpm
+    yarn
+    fx
+  )
+
+  echo "-----------------------------------------------------------"
+  echo "* npm install global packages:"
+  echo ""
+
+  for __npm_pkg ($__npm_global_pkgs); do
+    echo "  - ${__npm_pkg}"
+  done
+
+  echo "-----------------------------------------------------------"
+
+  for __npm_pkg ($__npm_global_pkgs); do
+    volta install ${__npm_pkg}
+  done
+}
+
+start() {
+    clear
+    echo "=================== Install DotFiles ================="
+    setup_omz
+    clear_existed_dot
+    clone_repo
+    init_lkdots
+    source ~/.zshrc
+    install_nodejs
+    echo "=================== Done ================="
+}
+
+start

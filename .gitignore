@@ -1,4 +1,9 @@
+.DS_Store
 ssh/*
 !ssh/*.enc
 rclone/*
 !rclone/*.enc
+RimeSync/mac/custom_phrase.txt
+!RimeSync/mac/custom_phrase.txt.enc
+RimeSync/mac/custom_phrase.txt/*
+!RimeSync/mac/custom_phrase.txt/*.enc

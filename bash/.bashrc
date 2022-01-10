@@ -17,3 +17,5 @@ vagrant_completion
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.sjtug.sjtu.edu.cn/homebrew-bottles/bottles
 fi
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

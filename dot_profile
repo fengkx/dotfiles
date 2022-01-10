@@ -1,0 +1,14 @@
+#export PYENV_ROOT="$HOME/.pyenv"
+#export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init --path)"
+
+
+if [[ $XDG_SESSION_TYPE = 'wayland' ]]; then
+    export MOZ_ENABLE_WAYLAND=1
+    export GDK_BACKEND=wayland
+    export QT_QPA_PLATFORM=wayland
+fi
+
+export MOZ_DISABLE_RDD_SANDBOX=1
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

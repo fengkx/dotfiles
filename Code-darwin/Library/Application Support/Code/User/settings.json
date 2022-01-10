@@ -1,31 +1,95 @@
 {
-    "editor.fontSize": 16,
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "eslint.alwaysShowStatus": true,
-    "eslint.format.enable": true,
-    "emmet.triggerExpansionOnTab": true,
-    "[javascriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "editor.inlineSuggest.enabled": true,
-    "github.copilot.enable": {
-        "*": true,
-        "yaml": true,
-        "plaintext": true,
-        "markdown": true,
-        "json": false
-    },
-    "window.zoomLevel": 1,
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "editor.bracketPairColorization.enabled": true
+  "editor.fontSize": 16,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
+  "emmet.triggerExpansionOnTab": true,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": true,
+    "markdown": true,
+    "json": true,
+    "typescript": true,
+    "rust": false
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.bracketPairColorization.enabled": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.cursorBlinking": "phase",
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "workbench.colorTheme": "GitHub Dark",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontFamily": "Menlo , Monaco, 'Courier New', monospace",
+  "terminal.integrated.fontFamily": "MesloLGS NF,Menlo , Monaco, 'Courier New', monospace",
+  "files.associations": {
+    "tsconfig.json": "jsonc",
+    "*.wxss": "css",
+    "*.wxml": "xml"
+  },
+  // "explorer.experimental.fileNesting.enabled": true,
+  // "explorer.experimental.fileNesting.patterns": {
+  //     "*.jsx": "$(capture).js, $(capture).spec.jsx",
+  //     "*.tsx": "$(capture).ts, $(capture).spec.tsx",
+  //     "package.json": "package-lock.json, .npmrc, yarn.lock, .yarnrc, .editorconfig, .prettier*, .gitignore, .eslintrc.json, jest.*.js, nx.json, tsconfig.*.json"
+  // }
+  "dprint.path": "~/.volta/bin/dprint",
+  "terminal.integrated.scrollback": 5000,
+  "errorLens.excludeBySource": ["eslint"],
+  "eslint.codeAction.showDocumentation": {},
+  "eslint.execArgv": ["--max_old_space_size=3000"],
+  "eslint.codeActionsOnSave.mode": "problems",
+  "editor.accessibilitySupport": "off",
+  "editor.experimental": {
+    "stickyScroll": {
+      "enabled": true
+    }
+  },
+  "editor.stickyScroll.enabled": true,
+  "npm.keybindingsChangedWarningShown": true,
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.userWords": [
+    "bytedance",
+    "commitlint",
+    "devcontainer",
+    "fengkx",
+    "Tencent",
+    "tsbuildinfo"
+  ],
+  "terminal.integrated.enableBell": true,
+  "beancount.mainBeanFile": "main.bean",
+  "beancount.python3Path": "python",
+  "svelte.enable-ts-plugin": true,
+  "editor.formatOnSave": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "jest.autoRun": "off",
+  "window.zoomLevel": 1,
+  "python.experiments.optInto": [
+    "pythonDiscoveryModuleWithoutWatcher"
+  ],
+  "tabnine.experimentalAutoImports": true,
+  "[python]": {
+    "editor.formatOnType": true
+  }
 }
