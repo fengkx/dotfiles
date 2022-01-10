@@ -48,5 +48,6 @@
   // "terminal.integrated.defaultProfile.linux": "zsh",
   "editor.cursorSmoothCaretAnimation": true,
   "editor.cursorBlinking": "phase",
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "editor.bracketPairColorization.enabled": true
 }
