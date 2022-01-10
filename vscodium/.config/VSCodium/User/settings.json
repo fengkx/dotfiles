@@ -45,9 +45,14 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  // "terminal.integrated.defaultProfile.linux": "zsh",
   "editor.cursorSmoothCaretAnimation": true,
   "editor.cursorBlinking": "phase",
   "window.zoomLevel": 1,
-  "editor.bracketPairColorization.enabled": true
+  "editor.bracketPairColorization.enabled": true,
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.profiles.linux": {
+    "zsh": {
+      "path": "/bin/zsh"
+    }
+  }
 }
