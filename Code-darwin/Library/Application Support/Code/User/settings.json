@@ -21,7 +21,8 @@
         "yaml": true,
         "plaintext": true,
         "markdown": true,
-        "json": false
+        "json": true,
+        "typescript": true
     },
     "window.zoomLevel": 1,
     "[typescriptreact]": {
