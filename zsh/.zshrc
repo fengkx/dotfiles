@@ -136,4 +136,9 @@ extract() {
 }
 
 eval "$(doko completion --shell bash)"
+
+#history
+HISTSIZE=50000
+SAVEHIST=10000
+
 source ~/.profile
