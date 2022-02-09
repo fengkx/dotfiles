@@ -24,9 +24,9 @@
         "json": true,
         "typescript": true
     },
-    "window.zoomLevel": 1,
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "editor.bracketPairColorization.enabled": true
+    "editor.bracketPairColorization.enabled": true,
+    "window.zoomLevel": 1
 }
