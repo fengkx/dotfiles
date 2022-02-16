@@ -47,7 +47,6 @@
   },
   "editor.cursorSmoothCaretAnimation": true,
   "editor.cursorBlinking": "phase",
-  "window.zoomLevel": 1,
   "editor.bracketPairColorization.enabled": true,
   "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.profiles.linux": {
@@ -62,5 +61,9 @@
       "markdown": true,
       "json": false
     }
-  }
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": 1
 }
