@@ -28,5 +28,8 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "editor.bracketPairColorization.enabled": true,
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
