@@ -35,6 +35,6 @@
     "editor.cursorBlinking": "phase",
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.cursorSmoothCaretAnimation": true,
-    "workbench.colorTheme": "GitHub Dark Colorblind (Beta)",
+    "workbench.colorTheme": "GitHub Dark",
     "workbench.iconTheme": "material-icon-theme"
 }
