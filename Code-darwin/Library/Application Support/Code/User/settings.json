@@ -28,7 +28,6 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "editor.bracketPairColorization.enabled": true,
-    "window.zoomLevel": 1,
     "[jsonc]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -36,5 +35,12 @@
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.cursorSmoothCaretAnimation": true,
     "workbench.colorTheme": "GitHub Dark",
-    "workbench.iconTheme": "material-icon-theme"
+    "workbench.iconTheme": "material-icon-theme",
+    "window.zoomLevel": 1,
+    // "explorer.experimental.fileNesting.enabled": true,
+    // "explorer.experimental.fileNesting.patterns": {
+    //     "*.jsx": "$(capture).js, $(capture).spec.jsx",
+    //     "*.tsx": "$(capture).ts, $(capture).spec.tsx",
+    //     "package.json": "package-lock.json, .npmrc, yarn.lock, .yarnrc, .editorconfig, .prettier*, .gitignore, .eslintrc.json, jest.*.js, nx.json, tsconfig.*.json"
+    // }
 }
