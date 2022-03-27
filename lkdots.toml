@@ -75,3 +75,8 @@ from = "~/dotfiles/rclone"
 to = "~/.config/rclone"
 platforms = ["linux"]
 encrypt = true
+
+[[entries]]
+from = "~/dotfiles/dot_profile"
+to = "~/.profile"
+platforms = ["linux"]
