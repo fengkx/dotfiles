@@ -149,3 +149,8 @@ HISTSIZE=50000
 SAVEHIST=10000
 
 source ~/.profile
+
+# workaround for firefox bug
+# https://bugzilla.mozilla.org/show_bug.cgi?id=1751363
+MOZ_DISABLE_RDD_SANDBOX=1
+
