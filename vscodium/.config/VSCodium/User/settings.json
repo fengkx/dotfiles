@@ -48,6 +48,9 @@
   "editor.cursorSmoothCaretAnimation": true,
   "editor.cursorBlinking": "phase",
   "editor.bracketPairColorization.enabled": true,
+  "files.associations": {
+        "tsconfig.json": "jsonc"
+  },
   "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.profiles.linux": {
     "zsh": {
