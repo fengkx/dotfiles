@@ -22,7 +22,8 @@
         "plaintext": true,
         "markdown": true,
         "json": true,
-        "typescript": true
+        "typescript": true,
+        "rust": false
     },
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
