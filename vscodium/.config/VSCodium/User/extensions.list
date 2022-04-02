@@ -17,10 +17,10 @@ eg2.vscode-npm-script@0.3.24
 esbenp.prettier-vscode@9.5.0
 GitHub.codespaces@1.5.7
 GitHub.copilot@1.11.5453
-GitHub.copilot-labs@0.0.79
+GitHub.copilot-labs@0.0.89
 GitHub.github-vscode-theme@6.0.0
 humao.rest-client@0.24.6
-James-Yu.latex-workshop@8.23.0
+James-Yu.latex-workshop@8.24.1
 mads-hartmann.bash-ide-vscode@1.12.1
 matklad.rust-analyzer@0.2.993
 mechatroner.rainbow-csv@2.2.0
@@ -31,7 +31,7 @@ ms-python.vscode-pylance@2022.3.4
 ms-toolsai.jupyter@2022.2.1030672458
 ms-toolsai.jupyter-keymap@1.0.0
 ms-toolsai.jupyter-renderers@1.0.6
-ms-vscode-remote.remote-containers@0.231.1
+ms-vscode-remote.remote-containers@0.231.2
 ms-vscode-remote.remote-ssh@0.76.1
 ms-vscode-remote.remote-ssh-edit@0.78.0
 ms-vscode.cpptools@1.9.7
@@ -39,8 +39,7 @@ octref.vetur@0.35.0
 oderwat.indent-rainbow@8.2.2
 Orta.vscode-jest@4.2.1
 PKief.material-icon-theme@4.15.0
-pranaygp.vscode-css-peek@4.2.0
-rangav.vscode-thunder-client@1.14.2
+rangav.vscode-thunder-client@1.14.4
 silvenon.mdx@0.1.0
 tomoyukim.vscode-mermaid-editor@0.14.0
 vadimcn.vscode-lldb@1.7.0
