@@ -123,8 +123,6 @@ export SHELLPROXY_URL=http://127.0.0.1:7890
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-eval "$(fnm env)"
-eval "$(fnm completions --shell bash)"
 alias open="xdg-open 2>/dev/null"
 
 # >>>> Vagrant command completion (start)
@@ -154,3 +152,5 @@ source ~/.profile
 # https://bugzilla.mozilla.org/show_bug.cgi?id=1751363
 export MOZ_DISABLE_RDD_SANDBOX=1
 
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
