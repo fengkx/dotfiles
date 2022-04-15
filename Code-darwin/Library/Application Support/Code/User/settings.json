@@ -37,12 +37,13 @@
     "editor.cursorSmoothCaretAnimation": true,
     "workbench.colorTheme": "GitHub Dark",
     "workbench.iconTheme": "material-icon-theme",
-    "window.zoomLevel": 1,
     "editor.fontFamily": "Menlo , Monaco, 'Courier New', monospace",
     "terminal.integrated.fontFamily": "MesloLGS NF,Menlo , Monaco, 'Courier New', monospace",
     "files.associations": {
-        "tsconfig.json": "jsonc"
+        "tsconfig.json": "jsonc",
+        "*.wxss": "css"
     },
+    "window.zoomLevel": 1,
     // "explorer.experimental.fileNesting.enabled": true,
     // "explorer.experimental.fileNesting.patterns": {
     //     "*.jsx": "$(capture).js, $(capture).spec.jsx",
