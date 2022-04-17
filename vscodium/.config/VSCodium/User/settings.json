@@ -49,8 +49,8 @@
   "editor.cursorBlinking": "phase",
   "editor.bracketPairColorization.enabled": true,
   "files.associations": {
-        "tsconfig.json": "jsonc",
-	"*.wxss": "css"
+    "tsconfig.json": "jsonc",
+    "*.wxss": "css"
   },
   "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.profiles.linux": {
@@ -70,5 +70,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "window.zoomLevel": 1,
-  "workbench.colorTheme": "GitHub Dark"
+  "workbench.colorTheme": "GitHub Dark",
+  "dprint.path": "~/.volta/bin/dprint"
 }
