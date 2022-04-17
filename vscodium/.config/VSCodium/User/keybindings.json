@@ -8,5 +8,13 @@
     "key": "ctrl+w",
     "command": "editor.action.smartSelect.expand",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+w",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.closeActiveEditor"
   }
 ]
