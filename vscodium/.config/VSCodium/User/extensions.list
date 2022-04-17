@@ -1,3 +1,4 @@
+astro-build.astro-vscode@0.14.0
 bierner.lit-html@1.11.1
 blanu.vscode-styled-jsx@2.1.1
 bradlc.vscode-tailwindcss@0.8.1
@@ -15,7 +16,7 @@ EditorConfig.EditorConfig@0.16.4
 efoerster.texlab@3.3.2
 eg2.vscode-npm-script@0.3.24
 esbenp.prettier-vscode@9.5.0
-GitHub.codespaces@1.7.0
+formulahendry.auto-rename-tag@0.1.10
 GitHub.copilot@1.12.5517
 GitHub.copilot-labs@0.1.122
 GitHub.github-vscode-theme@6.0.0
@@ -36,11 +37,11 @@ ms-vscode-remote.remote-ssh@0.78.0
 ms-vscode-remote.remote-ssh-edit@0.80.0
 ms-vscode.cpptools@1.9.7
 octref.vetur@0.35.0
-oderwat.indent-rainbow@8.3.1
 Orta.vscode-jest@4.2.1
 PKief.material-icon-theme@4.15.0
 rangav.vscode-thunder-client@1.16.2
 silvenon.mdx@0.1.0
 tomoyukim.vscode-mermaid-editor@0.14.0
+usernamehw.errorlens@3.4.2
 vadimcn.vscode-lldb@1.7.0
 wayou.vscode-todo-highlight@1.0.5
