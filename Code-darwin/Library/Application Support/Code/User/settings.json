@@ -50,4 +50,6 @@
     //     "*.tsx": "$(capture).ts, $(capture).spec.tsx",
     //     "package.json": "package-lock.json, .npmrc, yarn.lock, .yarnrc, .editorconfig, .prettier*, .gitignore, .eslintrc.json, jest.*.js, nx.json, tsconfig.*.json"
     // }
+    "dprint.path": "~/.volta/bin/dprint",
+    "terminal.integrated.scrollback": 5000
 }

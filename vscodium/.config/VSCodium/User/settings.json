@@ -71,5 +71,6 @@
   },
   "window.zoomLevel": 1,
   "workbench.colorTheme": "GitHub Dark",
-  "dprint.path": "~/.volta/bin/dprint"
+  "dprint.path": "~/.volta/bin/dprint",
+  "terminal.integrated.scrollback": 5000
 }
