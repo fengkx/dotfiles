@@ -154,3 +154,4 @@ export MOZ_DISABLE_RDD_SANDBOX=1
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
