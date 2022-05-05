@@ -18,7 +18,7 @@
     "command": "-workbench.action.closeActiveEditor"
   },
   {
-    "key": "ctrl+a k",
+    "key": "alt+a k",
     "command": "workbench.action.focusAboveGroup"
   },
   {
@@ -26,7 +26,7 @@
     "command": "-workbench.action.focusAboveGroup"
   },
   {
-    "key": "ctrl+a j",
+    "key": "alt+a j",
     "command": "workbench.action.focusBelowGroup"
   },
   {
@@ -34,7 +34,7 @@
     "command": "-workbench.action.focusBelowGroup"
   },
   {
-    "key": "ctrl+a h",
+    "key": "alt+a h",
     "command": "workbench.action.focusLeftGroup"
   },
   {
@@ -42,7 +42,7 @@
     "command": "-workbench.action.focusLeftGroup"
   },
   {
-    "key": "ctrl+a l",
+    "key": "alt+a l",
     "command": "workbench.action.focusRightGroup"
   },
   {
