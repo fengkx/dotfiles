@@ -124,7 +124,10 @@ export SHELLPROXY_URL=http://127.0.0.1:7890
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-alias open="xdg-open 2>/dev/null"
+OS="$(uname -s)"
+if test "$OS" = "Linux"; then
+	alias open="xdg-open 2>/dev/null"
+fi
 
 # >>>> Vagrant command completion (start)
 fpath=(/opt/vagrant/embedded/gems/2.2.14/gems/vagrant-2.2.14/contrib/zsh $fpath)
