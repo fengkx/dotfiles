@@ -28,7 +28,7 @@
   ],
   "latex-workshop.view.pdf.viewer": "tab",
   "emmet.triggerExpansionOnTab": true,
-  "http.proxySupport": "on",
+  "http.proxySupport": "fallback",
   "http.proxy": "http://127.0.0.1:7890",
   "python.dataScience.askForKernelRestart": false,
   "[typescript]": {
