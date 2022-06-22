@@ -43,7 +43,6 @@
         "tsconfig.json": "jsonc",
         "*.wxss": "css"
     },
-    "window.zoomLevel": 1,
     // "explorer.experimental.fileNesting.enabled": true,
     // "explorer.experimental.fileNesting.patterns": {
     //     "*.jsx": "$(capture).js, $(capture).spec.jsx",
@@ -51,5 +50,14 @@
     //     "package.json": "package-lock.json, .npmrc, yarn.lock, .yarnrc, .editorconfig, .prettier*, .gitignore, .eslintrc.json, jest.*.js, nx.json, tsconfig.*.json"
     // }
     "dprint.path": "~/.volta/bin/dprint",
-    "terminal.integrated.scrollback": 5000
+    "terminal.integrated.scrollback": 5000,
+    "window.zoomLevel": 1,
+    "errorLens.excludeBySource": [
+        "eslint"
+    ],
+    "eslint.codeAction.showDocumentation": {},
+    "eslint.execArgv": [
+        "--max_old_space_size=3000"
+    ],
+    "eslint.codeActionsOnSave.mode": "problems"
 }
