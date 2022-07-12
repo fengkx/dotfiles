@@ -35,7 +35,7 @@ RUN pacman --noconfirm -Syyu
 
 RUN pacman -S --noconfirm archlinuxcn-keyring
 RUN chmod 777 /etc/pacman.conf
-RUN echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+RUN echo "%$USERNAME ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 RUN pacman -Sy --noconfirm --needed \
 	base-devel \
 	awk \
