@@ -39,9 +39,6 @@ to = "~"
 from = "~/dotfiles/zsh"
 to = "~"
 
-[[entries]]
-from = "~/dotfiles/htop"
-to = "~"
 
 [[entries]]
 from = "~/dotfiles/deepin-terminal-gtk"

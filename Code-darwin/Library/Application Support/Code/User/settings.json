@@ -1,63 +1,60 @@
 {
-    "editor.fontSize": 16,
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "eslint.alwaysShowStatus": true,
-    "eslint.format.enable": true,
-    "emmet.triggerExpansionOnTab": true,
-    "[javascriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "editor.inlineSuggest.enabled": true,
-    "github.copilot.enable": {
-        "*": true,
-        "yaml": true,
-        "plaintext": true,
-        "markdown": true,
-        "json": true,
-        "typescript": true,
-        "rust": false
-    },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "editor.bracketPairColorization.enabled": true,
-    "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "editor.cursorBlinking": "phase",
-    "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "editor.cursorSmoothCaretAnimation": true,
-    "workbench.colorTheme": "GitHub Dark",
-    "workbench.iconTheme": "material-icon-theme",
-    "editor.fontFamily": "Menlo , Monaco, 'Courier New', monospace",
-    "terminal.integrated.fontFamily": "MesloLGS NF,Menlo , Monaco, 'Courier New', monospace",
-    "files.associations": {
-        "tsconfig.json": "jsonc",
-        "*.wxss": "css"
-    },
-    // "explorer.experimental.fileNesting.enabled": true,
-    // "explorer.experimental.fileNesting.patterns": {
-    //     "*.jsx": "$(capture).js, $(capture).spec.jsx",
-    //     "*.tsx": "$(capture).ts, $(capture).spec.tsx",
-    //     "package.json": "package-lock.json, .npmrc, yarn.lock, .yarnrc, .editorconfig, .prettier*, .gitignore, .eslintrc.json, jest.*.js, nx.json, tsconfig.*.json"
-    // }
-    "dprint.path": "~/.volta/bin/dprint",
-    "terminal.integrated.scrollback": 5000,
-    "window.zoomLevel": 1,
-    "errorLens.excludeBySource": [
-        "eslint"
-    ],
-    "eslint.codeAction.showDocumentation": {},
-    "eslint.execArgv": [
-        "--max_old_space_size=3000"
-    ],
-    "eslint.codeActionsOnSave.mode": "problems"
+  "editor.fontSize": 16,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
+  "emmet.triggerExpansionOnTab": true,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": true,
+    "markdown": true,
+    "json": true,
+    "typescript": true,
+    "rust": false
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.bracketPairColorization.enabled": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.cursorBlinking": "phase",
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.cursorSmoothCaretAnimation": true,
+  "workbench.colorTheme": "GitHub Dark",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontFamily": "Menlo , Monaco, 'Courier New', monospace",
+  "terminal.integrated.fontFamily": "MesloLGS NF,Menlo , Monaco, 'Courier New', monospace",
+  "files.associations": {
+    "tsconfig.json": "jsonc",
+    "*.wxss": "css"
+  },
+  // "explorer.experimental.fileNesting.enabled": true,
+  // "explorer.experimental.fileNesting.patterns": {
+  //     "*.jsx": "$(capture).js, $(capture).spec.jsx",
+  //     "*.tsx": "$(capture).ts, $(capture).spec.tsx",
+  //     "package.json": "package-lock.json, .npmrc, yarn.lock, .yarnrc, .editorconfig, .prettier*, .gitignore, .eslintrc.json, jest.*.js, nx.json, tsconfig.*.json"
+  // }
+  "dprint.path": "~/.volta/bin/dprint",
+  "terminal.integrated.scrollback": 5000,
+  "window.zoomLevel": 1,
+  "errorLens.excludeBySource": ["eslint"],
+  "eslint.codeAction.showDocumentation": {},
+  "eslint.execArgv": ["--max_old_space_size=3000"],
+  "eslint.codeActionsOnSave.mode": "problems",
+  "editor.accessibilitySupport": "off"
 }

@@ -1,0 +1,92 @@
+FROM archlinux
+
+LABEL MAINTAINER="fengkx"
+ARG ARCH_MIRROR_HOST=mirror.sjtu.edu.cn
+
+# Add archlinuxcn repository
+RUN echo -e " \n\
+[archlinuxcn] \n\
+SigLevel = Optional TrustedOnly \n\
+Server = https://cdn.repo.archlinuxcn.org/\$arch \n\
+" >> /etc/pacman.conf
+
+# Add multilib repository
+RUN echo -e " \n\
+[multilib] \n\
+Include = /etc/pacman.d/mirrorlist \n\
+" >> /etc/pacman.conf
+
+# Add multilib repository
+RUN echo -e 'Server = https://mirror.sjtu.edu.cn/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist
+
+
+# Set locale
+RUN sed -i -e "s/#en_US\.UTF-8/en_US\.UTF-8/" /etc/locale.gen
+RUN echo -e "LANG=en_US.UTF-8" > /etc/locale.conf
+RUN locale-gen
+
+# Initialize local keyring
+RUN pacman-key --init && pacman-key --populate archlinux
+RUN pacman --noconfirm -Syyu
+
+
+RUN pacman -S --noconfirm archlinuxcn-keyring
+RUN chmod 777 /etc/pacman.conf
+RUN echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+RUN pacman -Sy --noconfirm --needed \
+	base-devel \
+	awk \
+	less \
+	git \
+	less \
+	openssh \
+	python \
+	python-pip \
+	sed \
+	shadow \
+	sudo \
+	tar \
+	which \ 
+	vim \
+	ripgrep \
+	wget \
+	gettext \
+	rustup \
+	paru \
+	archlinuxcn-keyring \
+	&& pacman -Su --noconfirm \
+	&& pacman-db-upgrade && update-ca-trust \
+	&& pacman -Scc --noconfirm	
+
+RUN groupadd -r dev && useradd -r -m -g dev dev
+RUN usermod -a -G wheel dev 
+USER dev
+WORKDIR /tmp/
+# RUN git clone https://aur.archlinux.org/paru.git && \
+# 	cd paru && \
+# 	makepkg -si --noconfirm
+
+RUN rustup toolchain install nightly && \
+	rustup default nightly
+RUN wget -q https://github.com/fengkx/lkdots/releases/download/v0.0.2/lkdots-v0.0.2-x86_64-unknown-linux-gnu.tar.gz && \
+	tar vxf lkdots-v0.0.2-x86_64-unknown-linux-gnu.tar.gz && \
+	cd lkdots-v0.0.2-x86_64-unknown-linux-gnu && \
+	sudo cp lkdots /usr/local/bin
+
+RUN paru -Sy --noconfirm --needed \
+	volta-bin \
+	zsh \
+	python \
+	doko-rs \
+	exa \
+	neofetch \
+	htop \
+	fd \
+	libexif \ 
+	fonts-tlwg \
+	&& paru -Scc --noconfirm
+
+RUN paru -Sy --noconfirm --needed google-chrome && paru -Scc --noconfirm
+
+ENV TERM=xterm-256color
+WORKDIR /home/dev
