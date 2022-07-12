@@ -32,8 +32,8 @@ from = "~/dotfiles/cargo/.cargo"
 to = "~/.cargo"
 
 [[entries]]
-from = "~/dotfiles/local-bin"
-to = "~"
+from = "~/dotfiles/local-bin/.local/bin"
+to = "~/.local/bin"
 
 [[entries]]
 from = "~/dotfiles/zsh"
