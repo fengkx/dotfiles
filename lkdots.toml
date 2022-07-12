@@ -77,3 +77,7 @@ encrypt = true
 from = "~/dotfiles/dot_profile"
 to = "~/.profile"
 platforms = ["linux"]
+
+[[entries]]
+from = "~/dotfiles/dockerfiles"
+to = "~/.dockerfiles"

@@ -2,6 +2,9 @@ FROM archlinux
 
 LABEL MAINTAINER="fengkx"
 ARG ARCH_MIRROR_HOST=mirror.sjtu.edu.cn
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+ARG USERNAME=dev
 
 # Add archlinuxcn repository
 RUN echo -e " \n\
@@ -58,9 +61,13 @@ RUN pacman -Sy --noconfirm --needed \
 	&& pacman-db-upgrade && update-ca-trust \
 	&& pacman -Scc --noconfirm	
 
-RUN groupadd -r dev && useradd -r -m -g dev dev
-RUN usermod -a -G wheel dev 
-USER dev
+RUN groupadd -r --gid $USER_GID $USERNAME && \
+	useradd --uid $USER_UID --gid $USER_GID -r -m $USERNAME
+
+RUN echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME && \
+	chmod 0440 /etc/sudoers.d/$USERNAME
+
+USER $USERNAME
 WORKDIR /tmp/
 # RUN git clone https://aur.archlinux.org/paru.git && \
 # 	cd paru && \
