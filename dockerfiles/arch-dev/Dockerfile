@@ -38,6 +38,8 @@ RUN chmod 777 /etc/pacman.conf
 RUN echo "%$USERNAME ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 RUN pacman -Sy --noconfirm --needed \
 	base-devel \
+	clang \
+	lld \
 	xorg \
 	awk \
 	less \
@@ -94,6 +96,8 @@ RUN paru -Sy --noconfirm --needed \
 	fonts-tlwg \
 	neovim \
 	pyenv \
+	diff-so-fancy \
+	difftastic-git \
 	&& paru -Scc --noconfirm
 
 RUN paru -Sy --noconfirm --needed google-chrome && paru -Scc --noconfirm
