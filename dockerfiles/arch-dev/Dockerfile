@@ -98,6 +98,8 @@ RUN paru -Sy --noconfirm --needed \
 	pyenv \
 	diff-so-fancy \
 	difftastic-git \
+	fzf \
+	lsof \
 	&& paru -Scc --noconfirm
 
 RUN paru -Sy --noconfirm --needed google-chrome && paru -Scc --noconfirm
