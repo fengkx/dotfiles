@@ -12,7 +12,7 @@ on:
     branches: [ "master" ]
     # Publish semver tags as releases.
     paths: 
-      - dockerfiles/arch-dev
+      - dockerfiles/arch-dev/*
 env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
