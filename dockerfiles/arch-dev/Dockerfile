@@ -72,7 +72,7 @@ RUN echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME && \
 
 RUN mkdir -p /home/$USERNAME/.vscode-server/extensions \
         /home/$USERNAME/.vscode-server-insiders/extensions \
-    && chown -R $USERNAME \
+    && chown -R $USERNAME:$USERNAME \
         /home/$USERNAME/.vscode-server \
         /home/$USERNAME/.vscode-server-insiders
 
