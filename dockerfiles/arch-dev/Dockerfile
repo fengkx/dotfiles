@@ -101,6 +101,7 @@ RUN paru -Sy --noconfirm --needed \
 	fzf \
 	lsof \
 	xsel \
+	rsync \
 	&& paru -Scc --noconfirm
 
 RUN paru -Sy --noconfirm --needed google-chrome && paru -Scc --noconfirm
