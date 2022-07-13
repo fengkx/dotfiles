@@ -100,6 +100,7 @@ RUN paru -Sy --noconfirm --needed \
 	difftastic-git \
 	fzf \
 	lsof \
+	xsel \
 	&& paru -Scc --noconfirm
 
 RUN paru -Sy --noconfirm --needed google-chrome && paru -Scc --noconfirm
