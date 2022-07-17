@@ -8,19 +8,19 @@ ARG USERNAME=dev
 
 # Add archlinuxcn repository
 RUN echo -e " \n\
-[archlinuxcn] \n\
-SigLevel = Optional TrustedOnly \n\
-Server = https://cdn.repo.archlinuxcn.org/\$arch \n\
-" >> /etc/pacman.conf
+	[archlinuxcn] \n\
+	SigLevel = Optional TrustedOnly \n\
+	Server = https://cdn.repo.archlinuxcn.org/\$arch \n\
+	" >> /etc/pacman.conf
 
 # Add multilib repository
 RUN echo -e " \n\
-[multilib] \n\
-Include = /etc/pacman.d/mirrorlist \n\
-" >> /etc/pacman.conf
+	[multilib] \n\
+	Include = /etc/pacman.d/mirrorlist \n\
+	" >> /etc/pacman.conf
 
 # Add multilib repository
-RUN echo -e 'Server = https://mirror.sjtu.edu.cn/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist
+RUN echo -e 'Server = https://mirrors.bfsu.edu.cn/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist
 
 
 # Set locale
@@ -71,10 +71,10 @@ RUN echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME && \
 	chmod 0440 /etc/sudoers.d/$USERNAME
 
 RUN mkdir -p /home/$USERNAME/.vscode-server/extensions \
-        /home/$USERNAME/.vscode-server-insiders/extensions \
-    && chown -R $USERNAME:$USERNAME \
-        /home/$USERNAME/.vscode-server \
-        /home/$USERNAME/.vscode-server-insiders
+	/home/$USERNAME/.vscode-server-insiders/extensions \
+	&& chown -R $USERNAME:$USERNAME \
+	/home/$USERNAME/.vscode-server \
+	/home/$USERNAME/.vscode-server-insiders
 
 
 USER $USERNAME
