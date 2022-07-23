@@ -7,22 +7,21 @@ name: Arch devcontainer docker image
 
 on:
   schedule:
-    - cron: '35 8 * * *'
+    - cron: "35 8 * * *"
   push:
-    branches: [ "master" ]
+    branches: ["master"]
     # Publish semver tags as releases.
-    paths: 
+    paths:
       - dockerfiles/arch-dev/*
+      - .github/workflows/arch-devcontainer-image-publish.yml
 env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: fengkx/arch-devcontainer
 
-
 jobs:
   build:
-
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -41,8 +40,7 @@ jobs:
         if: github.event_name != 'pull_request'
         uses: sigstore/cosign-installer@main
         with:
-          cosign-release: 'v1.9.0'
-
+          cosign-release: "v1.9.0"
 
       - name: Setup Docker buildx
         uses: docker/setup-buildx-action@v2
@@ -72,9 +70,12 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: ./dockerfiles/arch-dev
+          file: ./dockerfiles/arch-dev/Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=registry,ref=user/app:latest
+          cache-to: type=inline
 
       # Sign the resulting Docker image digest except on PRs.
       # This will only write to the public Rekor transparency log when the Docker
