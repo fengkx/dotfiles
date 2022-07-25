@@ -162,7 +162,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
 # pnpm
-if [[ "$OS_TYPE" = "darwin*" ]]; then
+if [[ "$OSTYPE" = "darwin*" ]]; then
 	export PNPM_HOME="$HOME/Library/pnpm"
 fi
 export PATH="$PNPM_HOME:$PATH"
