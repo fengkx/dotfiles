@@ -6,7 +6,7 @@
 #@/user_id	mac
 da kai 	打開	c=0 d=0.0960789 t=23
 da kai zhong wen 	打開中文	c=1 d=0.965605 t=23
-duan yu 	短語	c=0 d=0.1 t=22
+duan yu 	短語	c=0 d=0.0995012 t=23
 fan ti 	繁體	c=1 d=0.941765 t=23
 fan ti zi 	繁體字	c=1 d=0.951229 t=23
 fu gai 	覆蓋	c=0 d=0.0955997 t=23
@@ -30,5 +30,5 @@ ya 	亞	c=0 d=0.0985112 t=23
 you 	悠	c=0 d=0.0985112 t=23
 zhong wen 	中文	c=0 d=0.0960789 t=23
 zhong ying wen 	中英文	c=1 d=0.980199 t=23
-zi ding yi 	自定義	c=0 d=0.1 t=22
+zi ding yi 	自定義	c=0 d=0.0995012 t=23
 zi ding yi duan yu 	自定義短語	c=1 d=1 t=23
