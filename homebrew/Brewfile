@@ -96,6 +96,7 @@ cask "iina"
 cask "kindle"
 cask "kitty"
 cask "lyricsx", args: { appdir: "/Applications" }
+cask "maczip"
 cask "monitorcontrol"
 cask "phoenix"
 cask "picgo"
