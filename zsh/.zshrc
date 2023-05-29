@@ -85,6 +85,7 @@ plugins=(
 	zsh-autosuggestions
 	fzf-tab
 	ssh-agent
+	pyenv-lazy
 )
 
 # ssh-agent settings
@@ -222,21 +223,21 @@ if (( $+commands[thefuck] )) &>/dev/null; then
 fi
 
 # pyenv lazyload
-## Lazyload pyenv
-if (( $+commands[pyenv] )) &>/dev/null; then
-    _sukka_lazyload_command_pyenv() {
-        export PATH="${PYENV_ROOT}/bin:${PYENV_ROOT}/shims:${PATH}" # pyenv init --path
-        eval "$(command pyenv init -)"
-    }
-    sukka_lazyload_add_command pyenv
-
-    _sukka_lazyload_completion_pyenv() {
-        source "${__SUKKA_HOMEBREW_PYENV_PREFIX}/completions/pyenv.zsh"
-    }
-    sukka_lazyload_add_completion pyenv
-
-    export PYENV_ROOT="${PYENV_ROOT:=${HOME}/.pyenv}"
-fi
+### Lazyload pyenv
+#if (( $+commands[pyenv] )) &>/dev/null; then
+#    _sukka_lazyload_command_pyenv() {
+#        export PATH="${PYENV_ROOT}/bin:${PYENV_ROOT}/shims:${PATH}" # pyenv init --path
+#        eval "$(command pyenv init -)"
+#    }
+#    sukka_lazyload_add_command pyenv
+#
+#    _sukka_lazyload_completion_pyenv() {
+#        source "${__SUKKA_HOMEBREW_PYENV_PREFIX}/completions/pyenv.zsh"
+#    }
+#    sukka_lazyload_add_completion pyenv
+#
+#    export PYENV_ROOT="${PYENV_ROOT:=${HOME}/.pyenv}"
+#fi
 
 
 # bun completions
