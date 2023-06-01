@@ -107,7 +107,17 @@ from = "~/dotfiles/launchctl/local.fengkx.colima.plist"
 to = "~/Library/LaunchAgents/local.fengkx.colima.plist"
 platforms = ["darwin"]
 
+#[[entries]]
+#from = "~/dotfiles/RimeSync/mac/custom_phrase.txt"
+#to = "/tmp/_a"
+#encrypt = true
+
 [[entries]]
-from = "~/dotfiles/RimeSync/mac/custom_phrase.txt"
-to = "/tmp/_a"
-encrypt = true
+from = "~/dotfiles/yabai"
+to = "~/.config/yabai" 
+platforms = ["darwin"]
+
+[[entries]]
+from = "~/dotfiles/skhd"
+to = "~/.config/skhd" 
+platforms = ["darwin"]
