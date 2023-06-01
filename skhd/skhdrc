@@ -40,8 +40,8 @@ shift + alt - 0: yabai -m window --space 10 && yabai -m space --focus 10
 # increase window size
 
 shift + alt - j: yabai -m window west --resize right:-20:0 2> /dev/null || yabai -m window --resize right:-20:0
-shift + alt - k: zsh ./k.sh
-shift + alt - i: zsh ./i.sh
+shift + alt - k: zsh "$HOME/.config/skhd/k.sh"
+shift + alt - i: zsh "$HOME/.config/skhd/i.sh"
 shift + alt - l: yabai -m window east --resize left:20:0 2> /dev/null || yabai -m window --resize left:20:0
 
 shift + alt - w: yabai -m window --toggle topmost
