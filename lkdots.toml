@@ -121,3 +121,8 @@ platforms = ["darwin"]
 from = "~/dotfiles/skhd"
 to = "~/.config/skhd" 
 platforms = ["darwin"]
+
+[[entries]]
+from = "~/dotfiles/sketchybar"
+to = "~/.config/sketchybar" 
+platforms = ["darwin"]
