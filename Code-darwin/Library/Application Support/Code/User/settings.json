@@ -37,7 +37,7 @@
   "editor.cursorSmoothCaretAnimation": "on",
   "workbench.colorTheme": "GitHub Dark",
   "workbench.iconTheme": "material-icon-theme",
-  "editor.fontFamily": "Menlo , Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "JetBrainsMono Nerd Font, Menlo , Monaco, 'Courier New', monospace",
   "terminal.integrated.fontFamily": "MesloLGS NF,Menlo , Monaco, 'Courier New', monospace",
   "files.associations": {
     "tsconfig.json": "jsonc",
