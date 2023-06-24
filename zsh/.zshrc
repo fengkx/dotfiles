@@ -258,3 +258,5 @@ alias lzg='lazygit'
 #pipx
 export PIPX_BIN_DIR="$HOME/.local/pybin"
 export PATH="$PIPX_BIN_DIR:$PATH"
+export PATH="./node_modules/.bin/:$PATH"
+
