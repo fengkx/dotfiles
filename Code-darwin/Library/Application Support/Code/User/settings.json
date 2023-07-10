@@ -175,5 +175,6 @@
   "javascript.referencesCodeLens.enabled": true,
   "beancount.inputMethods": ["pinyin"],
   "typescript.referencesCodeLens.enabled": true,
-  "typescript.referencesCodeLens.showOnAllFunctions": true
+  "typescript.referencesCodeLens.showOnAllFunctions": true,
+  "autocorrect.formatOnSave": false
 }
