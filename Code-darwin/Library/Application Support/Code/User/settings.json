@@ -96,7 +96,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "//": "Last update at 2023/7/10 20:14:29",
+    "//": "Last update at 2023/7/12 23:49:25",
     "*.asax": "$(capture).*.cs, $(capture).*.vb",
     "*.ascx": "$(capture).*.cs, $(capture).*.vb",
     "*.ashx": "$(capture).*.cs, $(capture).*.vb",
