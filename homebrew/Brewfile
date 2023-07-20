@@ -138,6 +138,7 @@ cask "typora"
 cask "ubersicht"
 cask "upic"
 cask "wechat"
+cask "wireshark-chmodbpf"
 cask "xmind"
 mas "iMovie 剪辑", id: 408981434
 mas "Keynote 讲演", id: 409183694
