@@ -121,6 +121,7 @@ cask "launchcontrol"
 cask "logseq"
 cask "lyricsx", args: { appdir: "/Applications" }
 cask "maczip"
+cask "makemkv"
 cask "mark-text"
 cask "monitorcontrol"
 cask "phoenix"
