@@ -96,7 +96,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "//": "Last update at 2023/7/12 23:49:25",
+    "//": "Last update at 2023/7/31 10:47:56",
     "*.asax": "$(capture).*.cs, $(capture).*.vb",
     "*.ascx": "$(capture).*.cs, $(capture).*.vb",
     "*.ashx": "$(capture).*.cs, $(capture).*.vb",
@@ -177,5 +177,7 @@
   "typescript.referencesCodeLens.enabled": true,
   "typescript.referencesCodeLens.showOnAllFunctions": true,
   "autocorrect.formatOnSave": false,
-  "autocorrect.enable": false
+  "autocorrect.enable": false,
+  "editor.guides.bracketPairs": true,
+  "editor.linkedEditing": true
 }
