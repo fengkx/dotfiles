@@ -39,6 +39,9 @@ to = "~/.local/bin"
 from = "~/dotfiles/zsh"
 to = "~"
 
+[[entries]]
+from = "~/dotfiles/omz-plugins"
+to = "~/.oh-my-zsh/custom/plugins"
 
 [[entries]]
 from = "~/dotfiles/deepin-terminal-gtk"

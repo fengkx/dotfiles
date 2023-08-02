@@ -86,6 +86,7 @@ plugins=(
 	fzf-tab
 	ssh-agent
 	pyenv-lazy
+	zshfl
 )
 
 # ssh-agent settings
