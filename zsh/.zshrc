@@ -1,9 +1,5 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+ZSH_DISABLE_COMPFIX=false
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -40,10 +36,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
+DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+# I use exa
+DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -88,6 +85,7 @@ plugins=(
 	pyenv-lazy
 	zshfl
 )
+
 
 # ssh-agent settings
 zstyle :omz:plugins:ssh-agent lazy yes
@@ -177,9 +175,6 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
 if [[ "$OSTYPE" = darwin* ]]; then
-	# MacPorts Installer addition on 2023-02-10_at_22:24:02: adding an appropriate PATH variable for use with MacPorts.
-	export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-	# Finished adapting your PATH environment variable for use with MacPorts.
 	if [[ -f /opt/homebrew/bin/brew ]]; then
 		eval "$(/opt/homebrew/bin/brew shellenv)"
 	fi
@@ -241,23 +236,19 @@ fi
 #fi
 
 
-# bun completions
-[ -s "/Users/fengkx/.bun/_bun" ] && source "/Users/fengkx/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
 export LESSCHARSET=utf-8
 
 if [[ "$OSTYPE" = darwin* ]]; then
 	export DOCKER_HOST=unix://$HOME/.colima/default/docker.sock
 fi
+
 alias lzd='lazydocker'
 alias lzg='lazygit'
+alias gitr='cd "$(git rev-parse --show-toplevel)"'
+
 
 #pipx
 export PIPX_BIN_DIR="$HOME/.local/pybin"
 export PATH="$PIPX_BIN_DIR:$PATH"
 export PATH="./node_modules/.bin/:$PATH"
-
