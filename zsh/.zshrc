@@ -1,125 +1,77 @@
+export LANG=en_US.UTF-8
+export EDITOR='vim'
+
 ZSH_DISABLE_COMPFIX=false
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+if [[ ! -f $HOME/.zi/bin/zi.zsh ]]; then
+  print -P "%F{33}▓▒░ %F{160}Installing (%F{33}z-shell/zi%F{160})…%f"
+  command mkdir -p "$HOME/.zi" && command chmod go-rwX "$HOME/.zi"
+  command git clone -q --depth=1 --branch "main" https://github.com/z-shell/zi "$HOME/.zi/bin" && \
+    print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+    print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
+source "$HOME/.zi/bin/zi.zsh"
+autoload -Uz _zi
+(( ${+_comps} )) && _comps[zi]=_zi
+# examples here -> https://wiki.zshell.dev/ecosystem/category/-annexes
+zicompinit # <- https://wiki.zshell.dev/docs/guides/commands
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+zi light z-shell/z-a-meta-plugins
+zi light z-shell/z-a-eval
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+zi ice depth"1"
+zi light romkatv/powerlevel10k
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+zi snippet ~/.oh-my-zsh/custom/plugins/zshfl/zshfl.plugin.zsh
 
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+zinit snippet OMZ::lib/completion.zsh
+zinit snippet OMZ::lib/history.zsh
+zinit snippet OMZ::lib/key-bindings.zsh
+zinit snippet OMZ::lib/theme-and-appearance.zsh
+zinit snippet OMZL::directories.zsh
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+zinit snippet OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh
+zinit snippet OMZ::plugins/sudo/sudo.plugin.zsh
 
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+zi ice wait lucid
+zinit snippet OMZP::z/z.plugin.zsh
 
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# I use exa
-DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-	git
-	git-extras
-	shell-proxy
-	sudo
-	z
-	fast-syntax-highlighting
-	zsh-autosuggestions
-	fzf-tab
-	ssh-agent
-	pyenv-lazy
-	zshfl
-)
-
-
-# ssh-agent settings
 zstyle :omz:plugins:ssh-agent lazy yes
 zstyle :omz:plugins:ssh-agent quiet yes
+zi ice wait lucid
+zinit snippet OMZP::ssh-agent/ssh-agent.plugin.zsh
+
+zinit ice lucid wait='1'
+zinit snippet OMZ::plugins/git/git.plugin.zsh
+
+zinit ice lucid wait='1'
+zinit snippet OMZ::plugins/git-extras/git-extras.plugin.zsh
 
 
-source $ZSH/oh-my-zsh.sh
+zi ice wait lucid
+zi load z-shell/H-S-MW
 
-# User configuration
+zi ice wait lucid
+zi light zsh-users/zsh-autosuggestions
 
-# export MANPATH="/usr/local/man:$MANPATH"
+zi ice wait lucid
+zi light z-shell/F-Sy-H
 
-# You may need to manually set your language environment
-export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+zi ice svn wait lucid
+zi snippet OMZP::shell-proxy
 
-export EDITOR='vim'
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+zi ice wait'2' lucid
+zinit light Aloxaf/fzf-tab
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+zi light z-shell/z-a-bin-gem-node
+
+zi ice wait lucid
+zi light davidparsson/zsh-pyenv-lazy
+
 
 alias ls=exa
 alias cat=bat
@@ -128,19 +80,12 @@ alias gnome-terminal=deepin-terminal
 alias dgd='GIT_EXTERNAL_DIFF=difft git diff'
 export SHELLPROXY_URL=http://127.0.0.1:7890
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+alias ls=exa
 
 OS="$(uname -s)"
 if test "$OS" = "Linux"; then
 	alias open="xdg-open 2>/dev/null"
 fi
-
-# >>>> Vagrant command completion (start)
-fpath=(/opt/vagrant/embedded/gems/2.2.14/gems/vagrant-2.2.14/contrib/zsh $fpath)
-compinit
-# <<<<  Vagrant command completion (end)
-#
 
 # extract
 extract() {
@@ -151,13 +96,16 @@ extract() {
   fi
 }
 
-(( $+commands[doko] )) && eval "$(doko completion --shell bash)"
+zi ice id-as"doko_completion" has"doko" \
+  eval"doko completion --shell bash" run-atpull
+zi light z-shell/null
 
 #history
 HISTSIZE=50000
 SAVEHIST=10000
 
 source ~/.profile
+
 
 # workaround for firefox bug
 # https://bugzilla.mozilla.org/show_bug.cgi?id=1751363
@@ -252,3 +200,9 @@ alias gitr='cd "$(git rev-parse --show-toplevel)"'
 export PIPX_BIN_DIR="$HOME/.local/pybin"
 export PATH="$PIPX_BIN_DIR:$PATH"
 export PATH="./node_modules/.bin/:$PATH"
+
+
+DISABLE_LS_COLORS=true
+zi ice wait lucid id-as"vivid_colors" has"vivid" \
+  atload'export LS_COLORS=$(vivid generate one-dark)'
+zi load z-shell/null
