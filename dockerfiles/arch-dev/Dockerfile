@@ -44,6 +44,7 @@ RUN pacman -Sy --noconfirm --needed \
 	awk \
 	less \
 	git \
+	svn \
 	less \
 	openssh \
 	python \
