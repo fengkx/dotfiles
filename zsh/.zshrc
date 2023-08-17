@@ -19,6 +19,13 @@ zicompinit # <- https://wiki.zshell.dev/docs/guides/commands
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# misc
+setopt multios
+setopt interactivecomments
+export PAGER=less
+export LESS='-R'
+
+
 zi light z-shell/z-a-meta-plugins
 zi light z-shell/z-a-eval
 
