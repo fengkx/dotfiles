@@ -129,3 +129,8 @@ platforms = ["darwin"]
 from = "~/dotfiles/sketchybar"
 to = "~/.config/sketchybar" 
 platforms = ["darwin"]
+
+[[entries]]
+from = "~/dotfiles/fast-syntax-highlight"
+to = "~/.config/f-sy-h"
+platforms = ["darwin", "linux"]
