@@ -77,6 +77,7 @@ zinit light Aloxaf/fzf-tab
 
 zi light z-shell/z-a-bin-gem-node
 
+#zi ice wait lucid
 zi light davidparsson/zsh-pyenv-lazy
 
 
