@@ -91,7 +91,20 @@
   "gitlens.remotes": [
     {
       "domain": "git.woa.com",
-      "type": "GitLab"
+      "type": "Custom",
+      "protocol": "https",
+      "urls": {
+        "repository": "https://git.woa.com/${repo}",
+        "branches": "https://git.woa.com/${repo}/-/branches",
+        "branch": "https://git.woa.com/${repo}/commits/${branch}",
+        "commit": "https://git.woa.com/${repo}/commit/${id}",
+        "file": "https://git.woa.com/${repo}?path=${file}${line}",
+        "fileInBranch": "https://git.woa.com/${repo}/blob/${branch}/${file}${line}",
+        "fileInCommit": "https://git.woa.com/${repo}/blob/${id}/${file}${line}",
+        "fileLine": "#L${line}",
+        "fileRange": "#L${start}-L${end}"
+      },
+      "name": "Gongfeng-woa"
     }
   ],
   "explorer.fileNesting.enabled": true,
