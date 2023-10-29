@@ -194,5 +194,8 @@
   "autocorrect.formatOnSave": false,
   "autocorrect.enable": false,
   "editor.guides.bracketPairs": true,
-  "editor.linkedEditing": true
+  "editor.linkedEditing": true,
+  "aws.suppressPrompts": {
+    "codeWhispererNewWelcomeMessage": true
+  }
 }
