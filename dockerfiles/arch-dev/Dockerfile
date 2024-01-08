@@ -50,6 +50,7 @@ RUN pacman -Sy --noconfirm --needed \
 	openssh \
 	python \
 	python-pip \
+	python-pipx \
 	sed \
 	shadow \
 	sudo \
