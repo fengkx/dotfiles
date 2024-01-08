@@ -33,6 +33,7 @@ RUN pacman-key --init && pacman-key --populate archlinux
 RUN pacman --noconfirm -Syyu
 
 
+RUN pacman-key --lsign-key "farseerfc@archlinux.org"
 RUN pacman -S --noconfirm archlinuxcn-keyring
 RUN chmod 777 /etc/pacman.conf
 RUN echo "%$USERNAME ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
