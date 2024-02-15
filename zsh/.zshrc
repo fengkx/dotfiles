@@ -133,6 +133,7 @@ export PATH="$PNPM_HOME:$PATH"
 if [[ "$OSTYPE" = darwin* ]]; then
 	if [[ -f /opt/homebrew/bin/brew ]]; then
 		eval "$(/opt/homebrew/bin/brew shellenv)"
+		export LIBRARY_PATH="/opt/homebrew/lib:$LIBRARY_PATH"
 	fi
 
 fi
