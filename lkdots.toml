@@ -66,8 +66,8 @@ from = "~/dotfiles/neofetch"
 to = "~"
 
 [[entries]]
-from = "~/dotfiles/Code-darwin"
-to = "~"
+from = "~/dotfiles/Code-darwin/Library/Application Support/Code/User"
+to = "~/Library/Application Support/Code/User"
 platforms = ["darwin"]
 
 [[entries]]
