@@ -88,7 +88,7 @@ alias gnome-terminal=deepin-terminal
 alias dgd='GIT_EXTERNAL_DIFF=difft git diff'
 export SHELLPROXY_URL=http://127.0.0.1:7890
 
-alias ls=exa
+alias ls=eza
 
 OS="$(uname -s)"
 if test "$OS" = "Linux"; then
