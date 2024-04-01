@@ -69,8 +69,8 @@ zi ice wait lucid
 zi light z-shell/F-Sy-H
 
 
-zi ice svn wait lucid
-zi snippet OMZP::shell-proxy
+#zi ice svn wait lucid
+#zi snippet OMZP::shell-proxy
 
 zi ice wait'2' lucid
 zinit light Aloxaf/fzf-tab
@@ -81,7 +81,7 @@ zi light z-shell/z-a-bin-gem-node
 zi light davidparsson/zsh-pyenv-lazy
 
 
-alias ls=exa
+alias ls=eza
 alias cat=bat
 alias vim=nvim
 alias gnome-terminal=deepin-terminal
