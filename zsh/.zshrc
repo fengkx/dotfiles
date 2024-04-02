@@ -80,8 +80,10 @@ zi light z-shell/z-a-bin-gem-node
 #zi ice wait lucid
 zi light davidparsson/zsh-pyenv-lazy
 
+if (( $+commands[eza] )); then
+	alias ls=eza
+fi
 
-alias ls=eza
 alias cat=bat
 alias vim=nvim
 alias gnome-terminal=deepin-terminal
@@ -119,8 +121,16 @@ source ~/.profile
 # https://bugzilla.mozilla.org/show_bug.cgi?id=1751363
 export MOZ_DISABLE_RDD_SANDBOX=1
 
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+#volta
+if (( $+commands[volta] )); then
+	export VOLTA_HOME="$HOME/.volta"
+fi
+
+# fnm
+if (( $+commands[fnm] )); then
+    eval "$(fnm env --use-on-cd --shell zsh)"
+fi
+
 export PATH="/usr/local/sbin:$PATH"
 
 # pnpm
