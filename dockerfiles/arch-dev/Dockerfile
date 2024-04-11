@@ -113,8 +113,8 @@ RUN paru -Sy --noconfirm --needed \
 	ttf-meslo-nerd-font-powerlevel10k \
 	rsync \
 	thefuck \
-	beancount \
-	fava \
+	git-lfs \
+	deno \
 	&& paru -Scc --noconfirm
 
 RUN paru -Sy --noconfirm --needed google-chrome && paru -Scc --noconfirm
