@@ -52,6 +52,7 @@ brew "ffmpeg"
 brew "ffmpegthumbnailer"
 brew "fish"
 brew "flyctl"
+brew "fnm"
 brew "fzf"
 brew "gd"
 brew "gdk-pixbuf"
@@ -114,7 +115,6 @@ brew "typos-cli"
 brew "unar"
 brew "vhs"
 brew "vivid"
-brew "volta"
 brew "wget"
 brew "yazi"
 brew "yt-dlp"
@@ -166,6 +166,11 @@ cask "visual-studio-code"
 cask "wechat"
 cask "wireshark"
 cask "xmind"
+mas "iMovie 剪辑", id: 408981434
+mas "Keynote 讲演", id: 409183694
+mas "Numbers 表格", id: 409203825
+mas "Pages 文稿", id: 409201541
+mas "库乐队", id: 682658836
 vscode "amazonwebservices.aws-toolkit-vscode"
 vscode "antfu.file-nesting"
 vscode "astro-build.astro-vscode"

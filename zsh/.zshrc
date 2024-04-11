@@ -121,6 +121,15 @@ source ~/.profile
 # https://bugzilla.mozilla.org/show_bug.cgi?id=1751363
 export MOZ_DISABLE_RDD_SANDBOX=1
 
+
+if [[ "$OSTYPE" = darwin* ]]; then
+	if [[ -f /opt/homebrew/bin/brew ]]; then
+		eval "$(/opt/homebrew/bin/brew shellenv)"
+		export LIBRARY_PATH="/opt/homebrew/lib:$LIBRARY_PATH"
+	fi
+fi
+export PATH="/usr/local/sbin:$PATH"
+
 #volta
 if (( $+commands[volta] )); then
 	export VOLTA_HOME="$HOME/.volta"
@@ -131,7 +140,6 @@ if (( $+commands[fnm] )); then
     eval "$(fnm env --use-on-cd --shell zsh)"
 fi
 
-export PATH="/usr/local/sbin:$PATH"
 
 # pnpm
 if [[ "$OSTYPE" = darwin* ]]; then
@@ -139,14 +147,6 @@ if [[ "$OSTYPE" = darwin* ]]; then
 fi
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
-
-if [[ "$OSTYPE" = darwin* ]]; then
-	if [[ -f /opt/homebrew/bin/brew ]]; then
-		eval "$(/opt/homebrew/bin/brew shellenv)"
-		export LIBRARY_PATH="/opt/homebrew/lib:$LIBRARY_PATH"
-	fi
-
-fi
 
 # Lazyload Function
 
