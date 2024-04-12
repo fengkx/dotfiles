@@ -27,21 +27,7 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[scalar]
-	repo = /Users/fengkx/lowcode/tcb-lcap
-	repo = /Users/fengkx/lowcode/weda-alternative
-	repo = /Users/fengkx/lowcode/weda-ui
-	repo = /Users/fengkx/me/code/lkdots/src
-	repo = /Users/fengkx/dotfiles
-	repo = /Users/fengkx/me/code/js-vm-enc/src
-	repo = /Users/fengkx/me/code/eslint-plugin-react/src
-[maintenance]
-	repo = /Users/fengkx/lowcode/tcb-lcap
-	repo = /Users/fengkx/lowcode/weda-alternative
-	repo = /Users/fengkx/lowcode/weda-ui
-	repo = /Users/fengkx/me/code/lkdots/src
-	repo = /Users/fengkx/dotfiles
-	repo = /Users/fengkx/me/code/js-vm-enc/src
-	repo = /Users/fengkx/me/code/eslint-plugin-react/src
 [push]
 	autoSetupRemote = true
+
+
