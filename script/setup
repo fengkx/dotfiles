@@ -68,7 +68,7 @@ install_nodejs() {
   echo "-----------------------------------------------------------"
   echo "* Installing NodeJS LTS..."
   echo "-----------------------------------------------------------"
-  volta install node@lts
+  fnm install --lts
   __npm_global_pkgs=(
     npm-check-updates
     whistle
@@ -88,7 +88,7 @@ install_nodejs() {
   echo "-----------------------------------------------------------"
 
   for __npm_pkg ($__npm_global_pkgs); do
-    volta install ${__npm_pkg}
+    npm install -g ${__npm_pkg}
   done
 }
 

@@ -92,7 +92,7 @@ RUN rustup toolchain install nightly && \
 RUN curl -fsSL https://bina.egoist.dev/fengkx/lkdots | sh
 
 RUN paru -Sy --noconfirm --needed \
-	volta-bin \
+	fnm \
 	zsh \
 	python \
 	doko-rs \

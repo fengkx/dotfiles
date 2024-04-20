@@ -10,5 +10,5 @@ if [[ $XDG_SESSION_TYPE = 'wayland' ]]; then
 fi
 
 export MOZ_DISABLE_RDD_SANDBOX=1
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+# export VOLTA_HOME="$HOME/.volta"
+# export PATH="$VOLTA_HOME/bin:$PATH"
