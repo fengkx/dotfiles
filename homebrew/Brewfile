@@ -153,6 +153,7 @@ cask "kindle"
 cask "kitty"
 cask "launchcontrol"
 cask "logseq"
+cask "lunar"
 cask "lyricsx", args: { appdir: "/Applications" }
 cask "maczip"
 cask "makemkv"
