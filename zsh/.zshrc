@@ -263,6 +263,10 @@ function setup_nodejs_openssl_env() {
     
 }
 
+function unset_nodejs_openssl_env() {
+	export NODE_OPTIONS=${NODE_OPTIONS//--use-openssl-ca/}
+}
+
 
 setup_nodejs_openssl_env
 
