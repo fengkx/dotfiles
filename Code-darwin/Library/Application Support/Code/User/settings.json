@@ -50,10 +50,10 @@
   //     "package.json": "package-lock.json, .npmrc, yarn.lock, .yarnrc, .editorconfig, .prettier*, .gitignore, .eslintrc.json, jest.*.js, nx.json, tsconfig.*.json"
   // }
   "dprint.path": "~/.volta/bin/dprint",
-  "terminal.integrated.scrollback": 5000,
+  "terminal.integrated.scrollback": 10000,
   "errorLens.excludeBySource": ["eslint"],
   "eslint.codeAction.showDocumentation": {},
-  "eslint.execArgv": ["--max_old_space_size=3000"],
+  "eslint.execArgv": ["--max_old_space_size=4096"],
   "eslint.codeActionsOnSave.mode": "problems",
   "editor.accessibilitySupport": "off",
   "editor.experimental": {
@@ -68,6 +68,7 @@
   },
   "cSpell.userWords": [
     "bytedance",
+    "clsx",
     "commitlint",
     "devcontainer",
     "fengkx",
@@ -203,5 +204,6 @@
     "sound": "on"
   },
   "terminal.integrated.enableVisualBell": true,
-  "terminal.integrated.fontFamily": "MesloLGS NF, Menlo , Monaco, 'Courier New', monospace"
+  "terminal.integrated.fontFamily": "MesloLGS NF, Menlo , Monaco, 'Courier New', monospace",
+  "editor.unicodeHighlight.ambiguousCharacters": false
 }
