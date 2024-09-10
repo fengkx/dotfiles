@@ -36,6 +36,7 @@
   "editor.suggest.snippetsPreventQuickSuggestions": false,
   "editor.cursorSmoothCaretAnimation": "on",
   "workbench.colorTheme": "GitHub Dark",
+  "workbench.editor.showTabs": "single",
   "workbench.iconTheme": "material-icon-theme",
   "editor.fontFamily": "JetBrainsMono Nerd Font, Menlo , Monaco, 'Courier New', monospace",
   "files.associations": {
@@ -198,8 +199,8 @@
     "*.xaml": "$(capture).xaml.cs"
   },
   "window.zoomLevel": 1,
-  "javascript.referencesCodeLens.enabled": true,
   "beancount.inputMethods": ["pinyin"],
+  "javascript.referencesCodeLens.enabled": true,
   "typescript.referencesCodeLens.enabled": true,
   "typescript.referencesCodeLens.showOnAllFunctions": true,
   "autocorrect.formatOnSave": false,
