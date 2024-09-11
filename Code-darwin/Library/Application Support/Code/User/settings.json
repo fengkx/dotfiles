@@ -36,7 +36,7 @@
   "editor.suggest.snippetsPreventQuickSuggestions": false,
   "editor.cursorSmoothCaretAnimation": "on",
   "workbench.colorTheme": "GitHub Dark",
-  "workbench.editor.showTabs": "single",
+  "workbench.editor.showTabs": "multiple",
   "workbench.iconTheme": "material-icon-theme",
   "editor.fontFamily": "JetBrainsMono Nerd Font, Menlo , Monaco, 'Courier New', monospace",
   "files.associations": {
