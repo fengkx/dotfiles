@@ -268,7 +268,7 @@ function unset_nodejs_openssl_env() {
 }
 
 
-setup_nodejs_openssl_env
+# setup_nodejs_openssl_env
 
 export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
 export LESSCHARSET=utf-8
