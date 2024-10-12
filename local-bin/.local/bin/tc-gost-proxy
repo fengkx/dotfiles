@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# 定义 DNS 服务器列表
+DNS_SERVERS=(
+    "8.8.8.8:853/tls-chain"
+    "8.8.4.4:853/tls-chain"
+    "dot.pub:853/tls-chain"
+    "dot.sb:853/tls-chain"
+    "1.1.1.1:853/tls-chain"
+    "1.0.0.1:853/tls-chain"
+    # 可以在这里添加更多 DNS 服务器
+)
+
+# 将 DNS 服务器列表转换为逗号分隔的字符串
+DNS_STRING=$(IFS=,; echo "${DNS_SERVERS[*]}")
+
+# 定义其他变量
+LOCAL_ADDRESS="127.0.0.1:8080"
+FORWARD_PROXY1="http://127.0.0.1:12639"
+FORWARD_PROXY2="http://web-proxy.oa.com:8080"
+
+# 构建 gost 命令
+GOST_COMMAND="gost -L=\"$LOCAL_ADDRESS?dns=$DNS_STRING\" -F=$FORWARD_PROXY1 -F=$FORWARD_PROXY2"
+
+# 输出命令（可选，用于调试）
+echo "Executing command: $GOST_COMMAND"
+
+# 执行 gost 命令
+eval $GOST_COMMAND#
