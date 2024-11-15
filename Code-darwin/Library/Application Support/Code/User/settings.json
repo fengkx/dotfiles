@@ -209,7 +209,7 @@
   "editor.linkedEditing": true,
   "workbench.editor.pinnedTabsOnSeparateRow": true,
   "accessibility.signals.terminalBell": {
-    "sound": "on"
+    "sound": "off"
   },
   "terminal.integrated.enableVisualBell": true,
   "terminal.integrated.fontFamily": "MesloLGS NF, Menlo , Monaco, 'Courier New', monospace",
