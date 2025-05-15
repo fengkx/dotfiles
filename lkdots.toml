@@ -71,6 +71,11 @@ to = "~/Library/Application Support/Code/User"
 platforms = ["darwin"]
 
 [[entries]]
+from = "~/dotfiles/Code-darwin/Library/Application Support/Cursor/User"
+to = "~/Library/Application Support/Cursor/User"
+platforms = ["darwin"]
+
+[[entries]]
 from = "~/dotfiles/rclone"
 to = "~/.config/rclone"
 platforms = ["linux"]
