@@ -188,7 +188,6 @@ cask "mark-text"
 cask "mitmproxy"
 cask "monitorcontrol"
 cask "ollama"
-cask "pdfelement"
 cask "phoenix"
 cask "picgo"
 cask "qbittorrent"
@@ -209,7 +208,6 @@ cask "virtualbox"
 cask "visual-studio-code"
 cask "wechat"
 cask "wireshark"
-cask "xmind"
 mas "iMovie 剪辑", id: 408981434
 mas "Keynote 讲演", id: 409183694
 mas "MenubarX", id: 1575588022
