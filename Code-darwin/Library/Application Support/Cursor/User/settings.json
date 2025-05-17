@@ -212,13 +212,13 @@
       "sound": "off"
     },
     "terminal.integrated.enableVisualBell": true,
-    "terminal.integrated.fontFamily": "MesloLGS NF, Menlo , Monaco, 'Courier New', monospace",
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "terminal.integrated.defaultProfile.linux": "zsh",
     "gitlens.ai.generateCommitMessage.enabled": false,
     "editor.formatOnSave": true,
     "beanLsp.trace.server": "verbose",
     "beanLsp.hover.includeSubaccountBalance": true,
-    "update.releaseTrack": "prerelease"
+    "update.releaseTrack": "prerelease",
+    "terminal.integrated.fontFamily": "MesloLGS NF, Menlo , Monaco, 'Courier New', monospace"
   }
   
