@@ -274,7 +274,9 @@ export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
 export LESSCHARSET=utf-8
 
 if [[ "$OSTYPE" = darwin* ]]; then
-	export DOCKER_HOST=unix://$HOME/.colima/default/docker.sock
+	if [[ ! -f "$HOME/.docker/config.json" ]] || ! grep -q '"orbstack"' "$HOME/.docker/config.json"; then
+		export DOCKER_HOST=unix://$HOME/.colima/default/docker.sock
+	fi
 fi
 
 alias lzd='lazydocker'
