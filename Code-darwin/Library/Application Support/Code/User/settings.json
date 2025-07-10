@@ -35,7 +35,6 @@
   "editor.cursorBlinking": "phase",
   "editor.suggest.snippetsPreventQuickSuggestions": false,
   "editor.cursorSmoothCaretAnimation": "on",
-  "workbench.colorTheme": "GitHub Dark",
   "workbench.editor.showTabs": "multiple",
   "workbench.iconTheme": "material-icon-theme",
   "editor.fontFamily": "JetBrainsMono Nerd Font, Menlo , Monaco, 'Courier New', monospace",
@@ -217,5 +216,6 @@
   "editor.unicodeHighlight.ambiguousCharacters": false,
   "chat.mcp.discovery.enabled": true,
   "chat.agent.enabled": true,
-  "github.copilot.nextEditSuggestions.enabled": true
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "workbench.colorTheme": "GitHub Dark"
 }
