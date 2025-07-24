@@ -35,7 +35,6 @@
   "editor.cursorBlinking": "phase",
   "editor.suggest.snippetsPreventQuickSuggestions": false,
   "editor.cursorSmoothCaretAnimation": "on",
-  "workbench.colorTheme": "GitHub Dark",
   "workbench.editor.showTabs": "multiple",
   "workbench.iconTheme": "material-icon-theme",
   "editor.fontFamily": "Maple Mono Normal NF CN, JetBrainsMono Nerd Font, Menlo , Monaco, 'Courier New', monospace",
@@ -227,13 +226,12 @@
     "editor.formatOnType": true,
     "editor.wordBasedSuggestions": "off"
   },
-  
+
   "workbench.colorCustomizations": {
     "editorInlayHint.background": "#00000000"
   },
   "[beancount]": {
     "editor.inlayHints.enabled": "on",
     "editor.inlayHints.maximumLength": 0
-  },
-  
+  }
 }
