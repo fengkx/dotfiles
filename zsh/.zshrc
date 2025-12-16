@@ -90,7 +90,6 @@ alias gnome-terminal=deepin-terminal
 alias dgd='GIT_EXTERNAL_DIFF=difft git diff'
 export SHELLPROXY_URL=http://127.0.0.1:7890
 
-alias ls=eza
 
 OS="$(uname -s)"
 if test "$OS" = "Linux"; then
@@ -148,59 +147,15 @@ fi
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
-# Lazyload Function
-
-## Setup a mock function for lazyload
-## Usage:
-## 1. Define function "_sukka_lazyload_command_[command name]" that will init the command
-## 2. sukka_lazyload_add_command [command name]
-sukka_lazyload_add_command() {
-    eval "$1() { \
-        unfunction $1; \
-        _sukka_lazyload_command_$1; \
-        $1 \$@; \
-    }"
-}
-## Setup autocompletion for lazyload
-## Usage:
-## 1. Define function "_sukka_lazyload_completion_[command name]" that will init the autocompletion
-## 2. sukka_lazyload_add_comp [command name]
-sukka_lazyload_add_completion() {
-    local comp_name="_sukka_lazyload__compfunc_$1"
-    eval "${comp_name}() { \
-        compdef -d $1; \
-        _sukka_lazyload_completion_$1; \
-    }"
-    compdef $comp_name $1
-}
-
 
 # thefuck
 ## Lazyload thefuck
-if (( $+commands[thefuck] )) &>/dev/null; then
-    _sukka_lazyload_command_fuck() {
-        eval $(thefuck --alias)
-    }
-
-    sukka_lazyload_add_command fuck
+if (( $+commands[thefuck] )); then
+  zi ice wait"0c" lucid id-as"thefuck" atload"eval \$(thefuck --alias)"
+  zi light z-shell/null
 fi
 
-# pyenv lazyload
-### Lazyload pyenv
-#if (( $+commands[pyenv] )) &>/dev/null; then
-#    _sukka_lazyload_command_pyenv() {
-#        export PATH="${PYENV_ROOT}/bin:${PYENV_ROOT}/shims:${PATH}" # pyenv init --path
-#        eval "$(command pyenv init -)"
-#    }
-#    sukka_lazyload_add_command pyenv
-#
-#    _sukka_lazyload_completion_pyenv() {
-#        source "${__SUKKA_HOMEBREW_PYENV_PREFIX}/completions/pyenv.zsh"
-#    }
-#    sukka_lazyload_add_completion pyenv
-#
-#    export PYENV_ROOT="${PYENV_ROOT:=${HOME}/.pyenv}"
-#fi
+zi light davidparsson/zsh-pyenv-lazy
 
 
 function find_cert_file() {
