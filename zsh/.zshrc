@@ -294,3 +294,7 @@ DISABLE_LS_COLORS=true
 zi ice wait lucid id-as"vivid_colors" has"vivid" \
   atload'export LS_COLORS=$(vivid generate one-dark); zstyle ":completion:*" list-colors ${(s.:.)LS_COLORS}'
 zi load z-shell/null
+
+
+# Added by CodeBuddy CN
+export PATH="/Users/fengkx/.codebuddy/bin:$PATH"
