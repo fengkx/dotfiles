@@ -7,3 +7,5 @@ RimeSync/mac/custom_phrase.txt
 !RimeSync/mac/custom_phrase.txt.enc
 RimeSync/mac/custom_phrase.txt/*
 !RimeSync/mac/custom_phrase.txt/*.enc
+claude-code/models/*
+!claude-code/models/*.enc

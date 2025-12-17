@@ -139,3 +139,10 @@ platforms = ["darwin"]
 from = "~/dotfiles/fast-syntax-highlight"
 to = "~/.config/f-sy-h"
 platforms = ["darwin", "linux"]
+
+
+[[entries]]
+from = "~/dotfiles/claude-code/models"
+to = "~/.claude-code/models"
+platforms = ["darwin", "linux"]
+encrypt = true
