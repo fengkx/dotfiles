@@ -243,5 +243,6 @@
     "editor.inlayHints.maximumLength": 0
   },
   "git.showCursorWorktrees": true,
-  "http.proxy": "http://127.0.0.1:8899"
+  "http.proxy": "http://127.0.0.1:8899",
+  "typescript.disableAutomaticTypeAcquisition": true
 }
