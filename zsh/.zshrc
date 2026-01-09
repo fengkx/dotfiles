@@ -80,14 +80,6 @@ zi light z-shell/z-a-bin-gem-node
 #zi ice wait lucid
 zi light davidparsson/zsh-pyenv-lazy
 
-if (( $+commands[eza] )); then
-	alias ls=eza
-fi
-
-alias cat=bat
-alias vim=nvim
-alias gnome-terminal=deepin-terminal
-alias dgd='GIT_EXTERNAL_DIFF=difft git diff'
 export SHELLPROXY_URL=http://127.0.0.1:7890
 
 
@@ -128,6 +120,24 @@ if [[ "$OSTYPE" = darwin* ]]; then
 	fi
 fi
 export PATH="/usr/local/sbin:$PATH"
+
+if (( $+commands[eza] )); then
+	alias ls=eza
+fi
+if (( $+commands[bat] )); then
+	alias cat=bat
+fi
+if (( $+commands[nvim] )); then
+	alias vim=nvim
+fi
+if (( $+commands[deepin-terminal] )); then
+	alias gnome-terminal=deepin-terminal
+fi
+
+if (( $+commands[difft] )); then
+	alias dgd='GIT_EXTERNAL_DIFF=difft git diff'
+fi
+
 
 #volta
 if (( $+commands[volta] )); then
