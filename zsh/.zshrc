@@ -25,6 +25,7 @@ setopt interactivecomments
 export PAGER=less
 export LESS='-R'
 
+typeset -U PATH path
 
 zi light z-shell/z-a-meta-plugins
 zi light z-shell/z-a-eval
@@ -154,7 +155,7 @@ fi
 if [[ "$OSTYPE" = darwin* ]]; then
 	export PNPM_HOME="$HOME/Library/pnpm"
 fi
-export PATH="$PNPM_HOME:$PATH"
+path=($PNPM_HOME $path)
 # pnpm end
 
 
@@ -165,7 +166,6 @@ if (( $+commands[thefuck] )); then
   zi light z-shell/null
 fi
 
-zi light davidparsson/zsh-pyenv-lazy
 
 
 function find_cert_file() {
@@ -235,8 +235,9 @@ function unset_nodejs_openssl_env() {
 
 # setup_nodejs_openssl_env
 
-export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
+path=($HOME/.cargo/bin $HOME/.local/bin $path)
 export LESSCHARSET=utf-8
+
 
 if [[ "$OSTYPE" = darwin* ]]; then
 	if [[ ! -f "$HOME/.docker/config.json" ]] || ! grep -q '"orbstack"' "$HOME/.docker/config.json"; then
@@ -251,7 +252,7 @@ alias gitr='cd "$(git rev-parse --show-toplevel)"'
 
 #pipx
 export PIPX_BIN_DIR="$HOME/.local/pybin"
-export PATH="$PIPX_BIN_DIR:$PATH"
+path=($PIPX_BIN_DIR $path)
 export PATH="./node_modules/.bin/:$PATH"
 
 
@@ -262,4 +263,4 @@ zi load z-shell/null
 
 
 # Added by CodeBuddy CN
-export PATH="/Users/fengkx/.codebuddy/bin:$PATH"
+path=($HOME/.codebuddy/bin $path)
