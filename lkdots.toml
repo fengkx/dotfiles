@@ -146,3 +146,8 @@ from = "~/dotfiles/claude-code/models"
 to = "~/.claude-code/models"
 platforms = ["darwin", "linux"]
 encrypt = true
+
+[[entries]]
+from = "~/dotfiles/opencode/opencode.json"
+to = "~/.config/opencode/opencode.json"
+platforms = ["darwin", "linux"]
