@@ -244,5 +244,6 @@
   },
   "git.showCursorWorktrees": true,
   "http.proxy": "http://127.0.0.1:8899",
-  "typescript.disableAutomaticTypeAcquisition": true
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "extensions.gallery.serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery"
 }
