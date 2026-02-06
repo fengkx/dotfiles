@@ -151,3 +151,8 @@ encrypt = true
 from = "~/dotfiles/opencode/opencode.json"
 to = "~/.config/opencode/opencode.json"
 platforms = ["darwin", "linux"]
+
+[[entries]]
+from = "~/dotfiles/codex"
+to = "~/.codex"
+platforms = ["darwin", "linux"]
