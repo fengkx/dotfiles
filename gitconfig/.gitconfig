@@ -34,6 +34,32 @@
 [alias]
     find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 -s | uniq -f1 -d | sort -n | tail -1 | cut -f2'"
     show-merge = "!sh -c 'merge=$(git find-merge $0 $1) && [ -n \"$merge\" ] && git show $merge'"
+    reorigin = "!f() { \
+        new_origin=$1; \
+        if [ -z \"$new_origin\" ]; then \
+            echo \"usage: git reorigin <new-origin-url>\" >&2; \
+            return 1; \
+        fi; \
+        if ! git remote get-url origin >/dev/null 2>&1; then \
+            echo \"remote 'origin' not found\" >&2; \
+            return 1; \
+        fi; \
+        if git remote get-url upstream >/dev/null 2>&1; then \
+            echo \"remote 'upstream' already exists\" >&2; \
+            return 1; \
+        fi; \
+        current_branch=$(git symbolic-ref --quiet --short HEAD 2>/dev/null || true); \
+        git remote rename origin upstream || return $?; \
+        git remote add origin \"$new_origin\" || return $?; \
+        if [ -n \"$current_branch\" ]; then \
+            if git show-ref --verify --quiet \"refs/remotes/upstream/$current_branch\"; then \
+                old_upstream_oid=$(git rev-parse \"refs/remotes/upstream/$current_branch\") || return $?; \
+                git update-ref \"refs/remotes/origin/$current_branch\" \"$old_upstream_oid\" || return $?; \
+            fi; \
+            git config \"branch.$current_branch.remote\" origin; \
+            git config \"branch.$current_branch.merge\" \"refs/heads/$current_branch\"; \
+        fi; \
+    }; f"
 
 [diff]
 	algorithm = histogram

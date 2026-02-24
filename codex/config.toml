@@ -10,4 +10,4 @@ enabled = true
 
 
 [sandbox_workspace_write]
-writeable_roots = ["/Users/fengkx/Library/pnpm/store"]
+writeable_roots = ["/Users/fengkx/Library/pnpm/store", "/Users/fengkx/.cache/uv"]
