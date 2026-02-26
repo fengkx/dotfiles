@@ -1,0 +1,139 @@
+#!/bin/sh
+
+set -eu
+
+SOURCE_FILE="/Users/fengkx/dotfiles/codex/git-commit-instructions.txt"
+STATE_FILE="${HOME}/.codex/.codex-global-state.json"
+JSON_KEY="git-commit-instructions"
+
+usage() {
+  cat >&2 <<'EOF'
+Usage: codex-git-instructions-sync <apply|export|status>
+EOF
+}
+
+err() {
+  printf '%s\n' "$*" >&2
+}
+
+require_jq() {
+  if ! command -v jq >/dev/null 2>&1; then
+    err "jq is required but not found in PATH"
+    exit 2
+  fi
+}
+
+require_state_file() {
+  if [ ! -f "$STATE_FILE" ]; then
+    err "Codex state file not found: $STATE_FILE"
+    err "Open Codex App once to initialize ~/.codex/.codex-global-state.json"
+    exit 2
+  fi
+}
+
+require_source_file() {
+  if [ ! -f "$SOURCE_FILE" ]; then
+    err "Source file not found: $SOURCE_FILE"
+    exit 2
+  fi
+}
+
+validate_state_json() {
+  if ! jq -e . "$STATE_FILE" >/dev/null 2>&1; then
+    err "Invalid JSON in Codex state file: $STATE_FILE"
+    exit 2
+  fi
+}
+
+get_state_value() {
+  jq -r --arg k "$JSON_KEY" '
+    if has($k) then
+      .[$k] | if type == "string" then . else tostring end
+    else
+      ""
+    end
+  ' "$STATE_FILE"
+}
+
+read_source_trimmed() {
+  jq -R -s -r 'sub("\n$"; "")' "$SOURCE_FILE"
+}
+
+write_text_with_trailing_newline() {
+  target=$1
+  value=$2
+  tmp=$(mktemp "${TMPDIR:-/tmp}/codex-git-instructions.XXXXXX")
+  trap 'rm -f "$tmp"' EXIT INT TERM HUP
+  printf '%s\n' "$value" >"$tmp"
+  mv "$tmp" "$target"
+  trap - EXIT INT TERM HUP
+}
+
+cmd_apply() {
+  require_jq
+  require_source_file
+  require_state_file
+  validate_state_json
+
+  value=$(read_source_trimmed)
+  tmp=$(mktemp "${TMPDIR:-/tmp}/codex-global-state.XXXXXX")
+  trap 'rm -f "$tmp"' EXIT INT TERM HUP
+
+  if ! jq --arg k "$JSON_KEY" --arg v "$value" '.[$k] = $v' "$STATE_FILE" >"$tmp"; then
+    err "Failed to update $JSON_KEY in $STATE_FILE"
+    exit 2
+  fi
+
+  mv "$tmp" "$STATE_FILE"
+  trap - EXIT INT TERM HUP
+  printf 'applied\n'
+}
+
+cmd_export() {
+  require_jq
+  require_state_file
+  validate_state_json
+
+  value=$(get_state_value)
+  write_text_with_trailing_newline "$SOURCE_FILE" "$value"
+  printf 'exported\n'
+}
+
+cmd_status() {
+  require_jq
+  require_source_file
+  require_state_file
+  validate_state_json
+
+  source_value=$(read_source_trimmed)
+  state_value=$(get_state_value)
+
+  if [ "$source_value" = "$state_value" ]; then
+    printf 'in-sync\n'
+    exit 0
+  fi
+
+  printf 'out-of-sync\n'
+  exit 1
+}
+
+if [ "$#" -ne 1 ]; then
+  usage
+  exit 2
+fi
+
+case "$1" in
+  apply)
+    cmd_apply
+    ;;
+  export)
+    cmd_export
+    ;;
+  status)
+    cmd_status
+    ;;
+  *)
+    usage
+    exit 2
+    ;;
+esac
