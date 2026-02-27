@@ -1,0 +1,185 @@
+#!/bin/sh
+
+set -eu
+
+STATE_FILE="${HOME}/.codex/.codex-global-state.json"
+INSTRUCTIONS_FILE="/Users/fengkx/dotfiles/codex/git-commit-instructions.txt"
+LOCALE_FILE="/Users/fengkx/dotfiles/codex/locale-override.txt"
+
+usage() {
+  cat >&2 <<'EOF'
+Usage: codex-global-state-sync <apply|export|status>
+EOF
+}
+
+err() {
+  printf '%s\n' "$*" >&2
+}
+
+require_jq() {
+  if ! command -v jq >/dev/null 2>&1; then
+    err "jq is required but not found in PATH"
+    exit 2
+  fi
+}
+
+require_state_file() {
+  if [ ! -f "$STATE_FILE" ]; then
+    err "Codex state file not found: $STATE_FILE"
+    err "Open Codex App once to initialize ~/.codex/.codex-global-state.json"
+    exit 2
+  fi
+}
+
+source_file_for_key() {
+  case "$1" in
+    git-commit-instructions)
+      printf '%s\n' "$INSTRUCTIONS_FILE"
+      ;;
+    localeOverride)
+      printf '%s\n' "$LOCALE_FILE"
+      ;;
+    *)
+      err "Unsupported key: $1"
+      exit 2
+      ;;
+  esac
+}
+
+require_source_files() {
+  for key in git-commit-instructions localeOverride; do
+    source_file=$(source_file_for_key "$key")
+    if [ ! -f "$source_file" ]; then
+      err "Source file not found: $source_file"
+      exit 2
+    fi
+  done
+}
+
+get_state_value() {
+  key=$1
+  jq -r --arg k "$key" '
+    if has($k) then
+      .[$k] | if type == "string" then . else tostring end
+    else
+      ""
+    end
+  ' "$STATE_FILE"
+}
+
+read_source_trimmed() {
+  key=$1
+  source_file=$(source_file_for_key "$key")
+  jq -R -s -r 'sub("\n$"; "")' "$source_file"
+}
+
+write_text_with_trailing_newline() {
+  target=$1
+  value=$2
+  tmp=$(mktemp "${TMPDIR:-/tmp}/codex-global-state-sync.XXXXXX")
+  trap 'rm -f "$tmp"' EXIT INT TERM HUP
+  printf '%s\n' "$value" >"$tmp"
+  mv "$tmp" "$target"
+  trap - EXIT INT TERM HUP
+}
+
+write_state_updates() {
+  instructions_value=$1
+  locale_value=$2
+  tmp=$(mktemp "${TMPDIR:-/tmp}/codex-global-state.XXXXXX")
+  trap 'rm -f "$tmp"' EXIT INT TERM HUP
+
+  if ! jq \
+    --arg instructions "$instructions_value" \
+    --arg locale "$locale_value" \
+    '
+      .["git-commit-instructions"] = $instructions
+      | .["localeOverride"] = $locale
+    ' \
+    "$STATE_FILE" >"$tmp"; then
+    err "Failed to update state file: $STATE_FILE"
+    exit 2
+  fi
+
+  mv "$tmp" "$STATE_FILE"
+  trap - EXIT INT TERM HUP
+}
+
+validate_state_json() {
+  if ! jq -e . "$STATE_FILE" >/dev/null 2>&1; then
+    err "Invalid JSON in Codex state file: $STATE_FILE"
+    exit 2
+  fi
+}
+
+cmd_apply() {
+  require_jq
+  require_source_files
+  require_state_file
+  validate_state_json
+
+  instructions_value=$(read_source_trimmed "git-commit-instructions")
+  locale_value=$(read_source_trimmed "localeOverride")
+  write_state_updates "$instructions_value" "$locale_value"
+  printf 'applied\n'
+}
+
+cmd_export() {
+  require_jq
+  require_state_file
+  validate_state_json
+
+  instructions_value=$(get_state_value "git-commit-instructions")
+  locale_value=$(get_state_value "localeOverride")
+  write_text_with_trailing_newline "$INSTRUCTIONS_FILE" "$instructions_value"
+  write_text_with_trailing_newline "$LOCALE_FILE" "$locale_value"
+  printf 'exported\n'
+}
+
+cmd_status() {
+  require_jq
+  require_source_files
+  require_state_file
+  validate_state_json
+
+  instructions_source=$(read_source_trimmed "git-commit-instructions")
+  instructions_state=$(get_state_value "git-commit-instructions")
+  locale_source=$(read_source_trimmed "localeOverride")
+  locale_state=$(get_state_value "localeOverride")
+
+  if [ "$instructions_source" = "$instructions_state" ] && [ "$locale_source" = "$locale_state" ]; then
+    printf 'in-sync\n'
+    exit 0
+  fi
+
+  if [ "$instructions_source" != "$instructions_state" ]; then
+    err "out-of-sync: git-commit-instructions"
+  fi
+  if [ "$locale_source" != "$locale_state" ]; then
+    err "out-of-sync: localeOverride"
+  fi
+
+  printf 'out-of-sync\n'
+  exit 1
+}
+
+if [ "$#" -ne 1 ]; then
+  usage
+  exit 2
+fi
+
+case "$1" in
+  apply)
+    cmd_apply
+    ;;
+  export)
+    cmd_export
+    ;;
+  status)
+    cmd_status
+    ;;
+  *)
+    usage
+    exit 2
+    ;;
+esac
