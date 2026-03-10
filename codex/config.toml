@@ -1,14 +1,14 @@
-model = "gpt-5.3-codex"
-model_reasoning_effort = "medium"
+model = "gpt-5.4"
+model_reasoning_effort = "high"
 personality = "pragmatic"
 
 sandbox_mode = "workspace-write"
 
-[mcp_servers]
-
 [mcp_servers.context7]
-command = "deno"
-args = ["run", "--allow-net", "npm:@upstash/context7-mcp"]
+args = ["-y", "@upstash/context7-mcp"]
+command = "npx"
+startup_timeout_ms = 20_000
+
 
 [mcp_servers.chrome-devtools]
 command = "npx"
