@@ -1,0 +1,25 @@
+# VSCode Dark palette migrated from Kitty.
+
+background = #1e1e1e
+foreground = #d4d4d4
+selection-background = #d7ba7d
+selection-foreground = #1e1e1e
+cursor-color = #d4d4d4
+cursor-text = #1e1e1e
+
+palette = 0=#000000
+palette = 1=#d16969
+palette = 2=#608b4e
+palette = 3=#d7ba7d
+palette = 4=#569cd6
+palette = 5=#c586c0
+palette = 6=#4ec9b0
+palette = 7=#d4d4d4
+palette = 8=#808080
+palette = 9=#ce9178
+palette = 10=#b5cea8
+palette = 11=#dcdcaa
+palette = 12=#9cdcfe
+palette = 13=#c586c0
+palette = 14=#4ec9b0
+palette = 15=#ffffff

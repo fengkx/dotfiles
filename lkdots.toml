@@ -101,6 +101,11 @@ to = "~/.config/kitty"
 platforms = ["linux", "darwin"]
 
 [[entries]]
+from = "~/dotfiles/ghostty"
+to = "~/.config/ghostty"
+platforms = ["linux", "darwin"]
+
+[[entries]]
 from = "~/dotfiles/wezterm"
 to = "~/.config/wezterm"
 platforms = ["linux", "darwin"]

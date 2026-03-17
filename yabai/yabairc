@@ -3,6 +3,10 @@
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
+# Official Ghostty workaround for macOS native tabs with Yabai.
+yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
+yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --layout bsp'
+
 # global settings
 yabai -m config window_shadow                on
 yabai -m config external_bar all:0:16

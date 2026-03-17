@@ -1,0 +1,78 @@
+# Main Ghostty config for macOS-first workflow.
+# Visual theme is split into a separate file to keep behavior settings focused.
+
+config-file = "themes/vscode-dark"
+
+# Typography
+font-family = "MesloLGS NF"
+font-family = "Menlo"
+font-family = "Monaco"
+font-family = "Courier New"
+font-size = 16
+
+# macOS window appearance
+window-theme = auto
+window-colorspace = srgb
+macos-titlebar-style = transparent
+
+# Match the previous Kitty look.
+background-opacity = 0.90
+background-blur = 27
+
+# Keep Kitty-like interaction defaults.
+copy-on-select = false
+scrollback-limit = 16777216
+cursor-click-to-move = true
+unfocused-split-opacity = 1
+confirm-close-surface = true
+quit-after-last-window-closed = false
+
+# Preserve cwd inheritance for new surfaces.
+window-inherit-working-directory = true
+tab-inherit-working-directory = true
+split-inherit-working-directory = true
+
+# Keep shell integration explicit so close-confirmation and prompt features stay reliable.
+shell-integration = detect
+
+# Search
+keybind = cmd+f=start_search
+keybind = cmd+g=navigate_search:next
+keybind = cmd+shift+g=navigate_search:previous
+
+# Splits: keep Kitty's "cmd+d opens a horizontal split" muscle memory.
+keybind = cmd+d=new_split:down
+keybind = cmd+shift+d=new_split:right
+keybind = cmd+bracket_right=goto_split:next
+keybind = cmd+bracket_left=goto_split:previous
+
+# Keep native tabs and rely on the Yabai workaround documented by Ghostty.
+keybind = cmd+t=new_tab
+keybind = cmd+w=close_surface
+keybind = cmd+1=goto_tab:1
+keybind = cmd+2=goto_tab:2
+keybind = cmd+3=goto_tab:3
+keybind = cmd+4=goto_tab:4
+keybind = cmd+5=goto_tab:5
+keybind = cmd+6=goto_tab:6
+keybind = cmd+7=goto_tab:7
+keybind = cmd+8=goto_tab:8
+keybind = cmd+9=goto_tab:9
+
+# Font scaling
+keybind = cmd+equal=increase_font_size:2
+keybind = cmd+minus=decrease_font_size:2
+keybind = cmd+0=reset_font_size
+
+# Clipboard
+keybind = performable:cmd+c=copy_to_clipboard
+keybind = cmd+v=paste_from_clipboard
+
+# Shell/readline navigation
+keybind = alt+arrow_left=esc:b
+keybind = alt+arrow_right=esc:f
+keybind = cmd+arrow_left=text:\x01
+keybind = cmd+arrow_right=text:\x05
+
+# Do not let the terminal claim this shortcut.
+keybind = cmd+k=ignore
