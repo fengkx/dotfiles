@@ -18,6 +18,9 @@ args = ["chrome-devtools-mcp@latest"]
 command = "npx"
 args = ["@yfme/weapp-dev-mcp"]
 
+[mcp_servers.weapp-devtool.tools.mp_ensureConnection]
+approval_mode = "approve"
+
 [mcp_servers.figma]
 url = "https://mcp.figma.com/mcp"
 
@@ -31,5 +34,11 @@ trust_level = "trusted"
 
 [features]
 multi_agent = true
+
+[plugins."github@openai-curated"]
+enabled = true
+
+[plugins."figma@openai-curated"]
+enabled = true
 
 
