@@ -3,9 +3,10 @@
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
-# Official Ghostty workaround for macOS native tabs with Yabai.
-yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
-yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --layout bsp'
+# Ghostty uses macOS native tabs. Re-apply the current layout instead of
+# forcing bsp so stack/float and zoom-fullscreen workflows survive tab changes.
+yabai -m signal --add app='^Ghostty$' event=window_created action='sh ~/.config/yabai/ghostty-tab-workaround.sh'
+yabai -m signal --add app='^Ghostty$' event=window_destroyed action='sh ~/.config/yabai/ghostty-tab-workaround.sh'
 
 # global settings
 yabai -m config window_shadow                on

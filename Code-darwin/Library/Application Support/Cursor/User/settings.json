@@ -1,7 +1,7 @@
 {
   "editor.fontSize": 16,
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "denoland.vscode-deno"
   },
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"

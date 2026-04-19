@@ -1,8 +1,9 @@
-model = "gpt-5.4"
-model_reasoning_effort = "high"
+model = "gpt-5.4-mini"
+model_reasoning_effort = "medium"
 personality = "pragmatic"
 
 sandbox_mode = "workspace-write"
+approvals_reviewer = "user"
 
 [mcp_servers.context7]
 args = ["-y", "@upstash/context7-mcp"]
@@ -21,24 +22,28 @@ args = ["@yfme/weapp-dev-mcp"]
 [mcp_servers.weapp-devtool.tools.mp_ensureConnection]
 approval_mode = "approve"
 
-[mcp_servers.figma]
-url = "https://mcp.figma.com/mcp"
 
+writeable_roots = ["/Users/fengkx/Library/pnpm/store", "/Users/fengkx/.cache/uv", "/Users/fengkx/.cache/clang/ModuleCache", "/Users/fengkx/Library/Caches/org.swift.swiftpm", "/Users/fengkx/Library/org.swift.swiftpm"]
 
-[sandbox_workspace_write]
-writeable_roots = ["/Users/fengkx/Library/pnpm/store", "/Users/fengkx/.cache/uv", "/Users/fengkx/Library/Caches/Yarn/v6"]
-network_access = true
-
-[projects."/Applications/Codex.app/Contents/Resources"]
+[projects."/Users/fengkx/me/code/macos-dictkit"]
 trust_level = "trusted"
 
-[features]
-multi_agent = true
+[projects."/Users/fengkx/me/code/anki-mate"]
+trust_level = "trusted"
 
-[plugins."github@openai-curated"]
-enabled = true
+[projects."/Users/fengkx/dotfiles"]
+trust_level = "trusted"
+
+[tui]
+status_line = ["model-with-reasoning", "current-dir", "project-root", "git-branch", "context-used", "five-hour-limit", "weekly-limit", "total-input-tokens", "total-output-tokens"]
 
 [plugins."figma@openai-curated"]
 enabled = true
 
+[plugins."github@openai-curated"]
+enabled = true
 
+[marketplaces.openai-bundled]
+last_updated = "2026-04-17T22:07:01Z"
+source_type = "local"
+source = "/Users/fengkx/.codex/.tmp/bundled-marketplaces/openai-bundled"
