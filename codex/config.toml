@@ -1,9 +1,10 @@
-model = "gpt-5.4-mini"
-model_reasoning_effort = "medium"
+model = "gpt-5.4"
+model_reasoning_effort = "high"
 personality = "pragmatic"
 
 sandbox_mode = "workspace-write"
 approvals_reviewer = "user"
+plan_mode_reasoning_effort = "high"
 
 [mcp_servers.context7]
 args = ["-y", "@upstash/context7-mcp"]
