@@ -264,3 +264,7 @@ zi load z-shell/null
 
 # Added by CodeBuddy CN
 path=($HOME/.codebuddy/bin $path)
+
+
+# Added by CodeBuddy CN
+export PATH="/Users/fengkx/.codebuddy/bin:$PATH"
