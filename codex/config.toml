@@ -74,6 +74,12 @@ status_line = [
 [tui.model_availability_nux]
 "gpt-5.5" = 4
 
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+
 [plugins."figma@openai-curated"]
 enabled = true
 
@@ -95,6 +101,22 @@ enabled = true
 [plugins."presentations@openai-primary-runtime"]
 enabled = true
 
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."browser-use@openai-bundled"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[marketplaces.openai-bundled]
 last_updated = "2026-04-26T04:59:44Z"
 source_type = "local"
 source = "/Users/fengkx/.codex/.tmp/bundled-marketplaces/openai-bundled"

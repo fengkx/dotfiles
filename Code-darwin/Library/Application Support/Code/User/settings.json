@@ -221,6 +221,5 @@
     "cursor-workspace": true
   },
   "chat.agent.enabled": true,
-  "github.copilot.nextEditSuggestions.enabled": true,
-  "workbench.colorTheme": "GitHub Dark"
+  "github.copilot.nextEditSuggestions.enabled": true
 }

@@ -151,7 +151,6 @@ if (( $+commands[fnm] )); then
 fi
 
 
-# pnpm
 if [[ "$OSTYPE" = darwin* ]]; then
 	export PNPM_HOME="$HOME/Library/pnpm"
 fi
