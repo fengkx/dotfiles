@@ -6,7 +6,10 @@ sandbox_mode = "workspace-write"
 approvals_reviewer = "user"
 plan_mode_reasoning_effort = "high"
 
-notify = ["/Users/fengkx/.codex/plugins/cache/openai-bundled/computer-use/1.0.758/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+notify = [
+    "/Users/fengkx/.codex/plugins/cache/openai-bundled/computer-use/1.0.758/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient",
+    "turn-ended",
+]
 
 [mcp_servers.context7]
 args = ["-y", "@upstash/context7-mcp"]
@@ -74,11 +77,6 @@ status_line = [
 [tui.model_availability_nux]
 "gpt-5.5" = 4
 
-[tui.model_availability_nux]
-"gpt-5.5" = 4
-
-[tui.model_availability_nux]
-"gpt-5.5" = 4
 
 [plugins."figma@openai-curated"]
 enabled = true
@@ -86,8 +84,6 @@ enabled = true
 [plugins."computer-use@openai-bundled"]
 enabled = true
 
-[plugins."computer-use@openai-bundled"]
-enabled = true
 
 [plugins."browser-use@openai-bundled"]
 enabled = true
@@ -101,20 +97,6 @@ enabled = true
 [plugins."presentations@openai-primary-runtime"]
 enabled = true
 
-[plugins."computer-use@openai-bundled"]
-enabled = true
-
-[plugins."browser-use@openai-bundled"]
-enabled = true
-
-[plugins."documents@openai-primary-runtime"]
-enabled = true
-
-[plugins."spreadsheets@openai-primary-runtime"]
-enabled = true
-
-[plugins."presentations@openai-primary-runtime"]
-enabled = true
 
 [marketplaces.openai-bundled]
 last_updated = "2026-04-26T04:59:44Z"
