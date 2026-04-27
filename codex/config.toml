@@ -1,4 +1,4 @@
-model = "gpt-5.4-mini"
+model = "gpt-5.4"
 model_reasoning_effort = "medium"
 personality = "pragmatic"
 
@@ -82,9 +82,9 @@ status_line = [
 enabled = true
 
 [plugins."computer-use@openai-bundled"]
+
+
 enabled = true
-
-
 [plugins."browser-use@openai-bundled"]
 enabled = true
 
@@ -95,18 +95,17 @@ enabled = true
 enabled = true
 
 [plugins."presentations@openai-primary-runtime"]
-enabled = true
 
 
-[marketplaces.openai-bundled]
 last_updated = "2026-04-26T04:59:44Z"
+[marketplaces.openai-bundled]
+
+last_updated = "2026-04-24T09:25:36Z"
 source_type = "local"
 source = "/Users/fengkx/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-04-24T14:33:53Z"
+fast_default_opt_out = true
+last_updated = "2026-04-24T04:53:32Z"
 source_type = "local"
 source = "/Users/fengkx/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
-
-[notice]
-fast_default_opt_out = true
