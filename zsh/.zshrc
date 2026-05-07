@@ -78,9 +78,6 @@ zinit light Aloxaf/fzf-tab
 
 zi light z-shell/z-a-bin-gem-node
 
-#zi ice wait lucid
-zi light davidparsson/zsh-pyenv-lazy
-
 export SHELLPROXY_URL=http://127.0.0.1:7890
 
 
@@ -122,6 +119,10 @@ if [[ "$OSTYPE" = darwin* ]]; then
 fi
 export PATH="/usr/local/sbin:$PATH"
 
+if (( $+commands[mise] )); then
+  eval "$(mise activate zsh)"
+fi
+
 if (( $+commands[eza] )); then
 	alias ls=eza
 fi
@@ -144,12 +145,6 @@ fi
 if (( $+commands[volta] )); then
 	export VOLTA_HOME="$HOME/.volta"
 fi
-
-# fnm
-if (( $+commands[fnm] )); then
-    eval "$(fnm env --use-on-cd --shell zsh)"
-fi
-
 
 if [[ "$OSTYPE" = darwin* ]]; then
 	export PNPM_HOME="$HOME/Library/pnpm"

@@ -60,6 +60,7 @@ RUN pacman -Sy --noconfirm --needed \
 	ripgrep \
 	wget \
 	gettext \
+	mise \
 	rustup \
 	paru \
 	archlinuxcn-keyring \
@@ -92,7 +93,6 @@ RUN rustup toolchain install nightly && \
 RUN curl -fsSL https://bina.egoist.dev/fengkx/lkdots | sh
 
 RUN paru -Sy --noconfirm --needed \
-	fnm \
 	zsh \
 	python \
 	doko-rs \
@@ -104,7 +104,6 @@ RUN paru -Sy --noconfirm --needed \
 	libexif \
 	fonts-tlwg \
 	neovim \
-	pyenv \
 	diff-so-fancy \
 	difftastic \
 	fzf \
@@ -114,7 +113,6 @@ RUN paru -Sy --noconfirm --needed \
 	rsync \
 	thefuck \
 	git-lfs \
-	deno \
 	&& paru -Scc --noconfirm
 
 RUN paru -Sy --noconfirm --needed google-chrome && paru -Scc --noconfirm

@@ -32,6 +32,11 @@ from = "~/dotfiles/cargo/.cargo/config"
 to = "~/.cargo/config"
 
 [[entries]]
+from = "~/dotfiles/mise"
+to = "~/.config/mise"
+platforms = ["darwin", "linux"]
+
+[[entries]]
 from = "~/dotfiles/local-bin/.local/bin"
 to = "~/.local/bin"
 

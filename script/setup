@@ -25,7 +25,6 @@ setup_omz() {
   git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom/}/plugins/fzf-tab
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
-  git clone https://github.com/davidparsson/zsh-pyenv-lazy.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom/}/plugins/pyenv-lazy
 
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 }
@@ -62,34 +61,14 @@ clone_repo() {
   cd ~/dotfiles
 }
 
-install_nodejs() {
+install_dev_runtimes() {
   echo "==========================================================="
-  echo "              Setting up NodeJS Environment"
+  echo "              Setting up Dev Runtime Environment"
   echo "-----------------------------------------------------------"
-  echo "* Installing NodeJS LTS..."
-  echo "-----------------------------------------------------------"
-  fnm install --lts
-  __npm_global_pkgs=(
-    npm-check-updates
-    whistle
-    pnpm
-    yarn
-    fx
-  )
-
-  echo "-----------------------------------------------------------"
-  echo "* npm install global packages:"
-  echo ""
-
-  for __npm_pkg ($__npm_global_pkgs); do
-    echo "  - ${__npm_pkg}"
-  done
-
+  echo "* Installing global runtime toolchain from mise..."
   echo "-----------------------------------------------------------"
 
-  for __npm_pkg ($__npm_global_pkgs); do
-    npm install -g ${__npm_pkg}
-  done
+  bash "$HOME/dotfiles/script/install-dev-runtimes.sh" "$HOME/dotfiles"
 }
 
 start() {
@@ -100,7 +79,7 @@ start() {
     clone_repo
     init_lkdots
     source ~/.zshrc
-    install_nodejs
+    install_dev_runtimes
     echo "=================== Done ================="
 }
 
