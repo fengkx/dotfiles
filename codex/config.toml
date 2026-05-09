@@ -1,4 +1,4 @@
-model = "gpt-5.4"
+model = "gpt-5.5"
 model_reasoning_effort = "medium"
 personality = "pragmatic"
 
@@ -6,10 +6,8 @@ sandbox_mode = "workspace-write"
 approvals_reviewer = "user"
 plan_mode_reasoning_effort = "high"
 
-notify = [
-    "/Users/fengkx/.codex/plugins/cache/openai-bundled/computer-use/1.0.758/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient",
-    "turn-ended",
-]
+
+notify = ["/Users/fengkx/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 
 [mcp_servers.context7]
 args = ["-y", "@upstash/context7-mcp"]
@@ -54,11 +52,20 @@ trust_level = "trusted"
 
 [features]
 multi_agent = true
+terminal_resize_reflow = true
+memories = true
+goals = true
 
 [projects."/Users/fengkx/dotfiles"]
 trust_level = "trusted"
 
 [projects."/Users/fengkx/me/code/NodeRSSBot"]
+trust_level = "trusted"
+
+[projects."/Users/fengkx/me/code/beancount-lsp"]
+trust_level = "trusted"
+
+[projects."/Users/fengkx/me/code/red-note-invest-road"]
 trust_level = "trusted"
 
 [tui]
@@ -85,8 +92,6 @@ enabled = true
 
 
 enabled = true
-[plugins."browser-use@openai-bundled"]
-enabled = true
 
 [plugins."documents@openai-primary-runtime"]
 enabled = true
@@ -98,14 +103,20 @@ enabled = true
 
 
 last_updated = "2026-04-26T04:59:44Z"
-[marketplaces.openai-bundled]
+enabled = true
 
-last_updated = "2026-04-24T09:25:36Z"
+[plugins."github@openai-curated"]
+enabled = true
+
+[plugins."browser-use@openai-bundled"]
+enabled = true
+
+[marketplaces.openai-bundled]
+last_updated = "2026-05-09T03:36:07Z"
 source_type = "local"
 source = "/Users/fengkx/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-fast_default_opt_out = true
-last_updated = "2026-04-24T04:53:32Z"
+last_updated = "2026-05-08T13:00:32Z"
 source_type = "local"
 source = "/Users/fengkx/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
