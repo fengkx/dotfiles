@@ -166,3 +166,16 @@ platforms = ["darwin", "linux"]
 from = "~/dotfiles/codex"
 to = "~/.codex"
 platforms = ["darwin", "linux"]
+
+[[projections]]
+name = "npmrc"
+driver = "properties"
+source = "~/dotfiles/npm/npmrc.public"
+target = "~/.npmrc"
+
+[[projections]]
+name = "codex-global-state"
+driver = "json"
+source = "~/dotfiles/codex/global-state.partial.json"
+target = "~/.codex/.codex-global-state.json"
+

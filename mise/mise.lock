@@ -105,111 +105,111 @@ version = "28.5"
 backend = "core:erlang"
 
 [[tools."github:longbridge/longbridge-terminal"]]
-version = "0.20.0"
+version = "0.20.3"
 backend = "github:longbridge/longbridge-terminal"
 
 [tools."github:longbridge/longbridge-terminal"."platforms.linux-arm64"]
-checksum = "sha256:c01c80105b352b4de8096aaac55a569ef5eb985533e9224d925f94ff1a5c26e3"
-url = "https://github.com/longbridge/longbridge-terminal/releases/download/v0.20.0/longbridge-terminal-linux-arm64.tar.gz"
-url_api = "https://api.github.com/repos/longbridge/longbridge-terminal/releases/assets/415237768"
+checksum = "sha256:2919516214ae02475c11eb0d092e409c98c80eb0ba860eb9ac6da5364be1d12a"
+url = "https://github.com/longbridge/longbridge-terminal/releases/download/v0.20.3/longbridge-terminal-linux-arm64.tar.gz"
+url_api = "https://api.github.com/repos/longbridge/longbridge-terminal/releases/assets/418183506"
 
 [tools."github:longbridge/longbridge-terminal"."platforms.linux-arm64-musl"]
-checksum = "sha256:0ee888da19f889861260e47fdaac55c0f9542e0d5faf6f9976422d4c87f69f58"
-url = "https://github.com/longbridge/longbridge-terminal/releases/download/v0.20.0/longbridge-terminal-linux-musl-arm64.tar.gz"
-url_api = "https://api.github.com/repos/longbridge/longbridge-terminal/releases/assets/415237765"
+checksum = "sha256:797fb6fe221c79e7f6e96539739564ba5c0ee0d02e826f28d32e38645801742f"
+url = "https://github.com/longbridge/longbridge-terminal/releases/download/v0.20.3/longbridge-terminal-linux-musl-arm64.tar.gz"
+url_api = "https://api.github.com/repos/longbridge/longbridge-terminal/releases/assets/418183509"
 
 [tools."github:longbridge/longbridge-terminal"."platforms.linux-x64"]
-checksum = "sha256:1ed716ebd923e029554cf39cd2252d3817d340d4078679f523014cac4d3950fb"
-url = "https://github.com/longbridge/longbridge-terminal/releases/download/v0.20.0/longbridge-terminal-linux-amd64.tar.gz"
-url_api = "https://api.github.com/repos/longbridge/longbridge-terminal/releases/assets/415237772"
+checksum = "sha256:b1fe8ceac8bbbacfda7a548ef4a3462894f6af9903fef7dab84d2799f820db92"
+url = "https://github.com/longbridge/longbridge-terminal/releases/download/v0.20.3/longbridge-terminal-linux-amd64.tar.gz"
+url_api = "https://api.github.com/repos/longbridge/longbridge-terminal/releases/assets/418183502"
 
 [tools."github:longbridge/longbridge-terminal"."platforms.linux-x64-baseline"]
-checksum = "sha256:1ed716ebd923e029554cf39cd2252d3817d340d4078679f523014cac4d3950fb"
-url = "https://github.com/longbridge/longbridge-terminal/releases/download/v0.20.0/longbridge-terminal-linux-amd64.tar.gz"
-url_api = "https://api.github.com/repos/longbridge/longbridge-terminal/releases/assets/415237772"
+checksum = "sha256:b1fe8ceac8bbbacfda7a548ef4a3462894f6af9903fef7dab84d2799f820db92"
+url = "https://github.com/longbridge/longbridge-terminal/releases/download/v0.20.3/longbridge-terminal-linux-amd64.tar.gz"
+url_api = "https://api.github.com/repos/longbridge/longbridge-terminal/releases/assets/418183502"
 
 [tools."github:longbridge/longbridge-terminal"."platforms.linux-x64-musl"]
-checksum = "sha256:d322d7f36f4e3ce8a982ed622ce19597c80def03c723005e775cd5072e09338d"
-url = "https://github.com/longbridge/longbridge-terminal/releases/download/v0.20.0/longbridge-terminal-linux-musl-amd64.tar.gz"
-url_api = "https://api.github.com/repos/longbridge/longbridge-terminal/releases/assets/415237775"
+checksum = "sha256:6c55e64a3d97a74362f4bbd4118d0267b7ba84b85340177c6101b9c0325d8275"
+url = "https://github.com/longbridge/longbridge-terminal/releases/download/v0.20.3/longbridge-terminal-linux-musl-amd64.tar.gz"
+url_api = "https://api.github.com/repos/longbridge/longbridge-terminal/releases/assets/418183507"
 
 [tools."github:longbridge/longbridge-terminal"."platforms.linux-x64-musl-baseline"]
-checksum = "sha256:d322d7f36f4e3ce8a982ed622ce19597c80def03c723005e775cd5072e09338d"
-url = "https://github.com/longbridge/longbridge-terminal/releases/download/v0.20.0/longbridge-terminal-linux-musl-amd64.tar.gz"
-url_api = "https://api.github.com/repos/longbridge/longbridge-terminal/releases/assets/415237775"
+checksum = "sha256:6c55e64a3d97a74362f4bbd4118d0267b7ba84b85340177c6101b9c0325d8275"
+url = "https://github.com/longbridge/longbridge-terminal/releases/download/v0.20.3/longbridge-terminal-linux-musl-amd64.tar.gz"
+url_api = "https://api.github.com/repos/longbridge/longbridge-terminal/releases/assets/418183507"
 
 [tools."github:longbridge/longbridge-terminal"."platforms.macos-arm64"]
-checksum = "sha256:eec3aa986b3e91e1ca09bf02163163ea22c71adc7bdcd8ac9afc9eff67bbbe36"
-url = "https://github.com/longbridge/longbridge-terminal/releases/download/v0.20.0/longbridge-terminal-darwin-arm64.tar.gz"
-url_api = "https://api.github.com/repos/longbridge/longbridge-terminal/releases/assets/415237776"
+checksum = "sha256:9768843747979b9caa3ba0d8ec10105ffeb9f090e148852acc5495f89917a2de"
+url = "https://github.com/longbridge/longbridge-terminal/releases/download/v0.20.3/longbridge-terminal-darwin-arm64.tar.gz"
+url_api = "https://api.github.com/repos/longbridge/longbridge-terminal/releases/assets/418183501"
 
 [tools."github:longbridge/longbridge-terminal"."platforms.macos-x64"]
-checksum = "sha256:01bceb989ce0452217ef11c97a1b28cc18b6519cfe468c6e15012237d47381a9"
-url = "https://github.com/longbridge/longbridge-terminal/releases/download/v0.20.0/longbridge-terminal-darwin-amd64.tar.gz"
-url_api = "https://api.github.com/repos/longbridge/longbridge-terminal/releases/assets/415237767"
+checksum = "sha256:23477322418acdbd745b6b41b0b633e6b0e68150284587151591a6e175be0884"
+url = "https://github.com/longbridge/longbridge-terminal/releases/download/v0.20.3/longbridge-terminal-darwin-amd64.tar.gz"
+url_api = "https://api.github.com/repos/longbridge/longbridge-terminal/releases/assets/418183500"
 
 [tools."github:longbridge/longbridge-terminal"."platforms.macos-x64-baseline"]
-checksum = "sha256:01bceb989ce0452217ef11c97a1b28cc18b6519cfe468c6e15012237d47381a9"
-url = "https://github.com/longbridge/longbridge-terminal/releases/download/v0.20.0/longbridge-terminal-darwin-amd64.tar.gz"
-url_api = "https://api.github.com/repos/longbridge/longbridge-terminal/releases/assets/415237767"
+checksum = "sha256:23477322418acdbd745b6b41b0b633e6b0e68150284587151591a6e175be0884"
+url = "https://github.com/longbridge/longbridge-terminal/releases/download/v0.20.3/longbridge-terminal-darwin-amd64.tar.gz"
+url_api = "https://api.github.com/repos/longbridge/longbridge-terminal/releases/assets/418183500"
 
 [tools."github:longbridge/longbridge-terminal"."platforms.windows-x64"]
-checksum = "sha256:875327748d5416aa916af010fe9cbb5d25e794d6df9298979afff9cfbfdcbb62"
-url = "https://github.com/longbridge/longbridge-terminal/releases/download/v0.20.0/longbridge-terminal-windows-amd64.zip"
-url_api = "https://api.github.com/repos/longbridge/longbridge-terminal/releases/assets/415237774"
+checksum = "sha256:d560e0049d200684bd8e66ae0218d5ea5d1a3d773bff9282258721d9a56037a6"
+url = "https://github.com/longbridge/longbridge-terminal/releases/download/v0.20.3/longbridge-terminal-windows-amd64.zip"
+url_api = "https://api.github.com/repos/longbridge/longbridge-terminal/releases/assets/418183512"
 
 [tools."github:longbridge/longbridge-terminal"."platforms.windows-x64-baseline"]
-checksum = "sha256:875327748d5416aa916af010fe9cbb5d25e794d6df9298979afff9cfbfdcbb62"
-url = "https://github.com/longbridge/longbridge-terminal/releases/download/v0.20.0/longbridge-terminal-windows-amd64.zip"
-url_api = "https://api.github.com/repos/longbridge/longbridge-terminal/releases/assets/415237774"
+checksum = "sha256:d560e0049d200684bd8e66ae0218d5ea5d1a3d773bff9282258721d9a56037a6"
+url = "https://github.com/longbridge/longbridge-terminal/releases/download/v0.20.3/longbridge-terminal-windows-amd64.zip"
+url_api = "https://api.github.com/repos/longbridge/longbridge-terminal/releases/assets/418183512"
 
 [[tools.go]]
-version = "1.26.2"
+version = "1.26.3"
 backend = "core:go"
 
 [tools.go."platforms.linux-arm64"]
-checksum = "sha256:c958a1fe1b361391db163a485e21f5f228142d6f8b584f6bef89b26f66dc5b23"
-url = "https://dl.google.com/go/go1.26.2.linux-arm64.tar.gz"
+checksum = "sha256:9d89a3ea57d141c2b22d70083f2c8459ba3890f2d9e818e7e933b75614936565"
+url = "https://dl.google.com/go/go1.26.3.linux-arm64.tar.gz"
 
 [tools.go."platforms.linux-arm64-musl"]
-checksum = "sha256:c958a1fe1b361391db163a485e21f5f228142d6f8b584f6bef89b26f66dc5b23"
-url = "https://dl.google.com/go/go1.26.2.linux-arm64.tar.gz"
+checksum = "sha256:9d89a3ea57d141c2b22d70083f2c8459ba3890f2d9e818e7e933b75614936565"
+url = "https://dl.google.com/go/go1.26.3.linux-arm64.tar.gz"
 
 [tools.go."platforms.linux-x64"]
-checksum = "sha256:990e6b4bbba816dc3ee129eaeaf4b42f17c2800b88a2166c265ac1a200262282"
-url = "https://dl.google.com/go/go1.26.2.linux-amd64.tar.gz"
+checksum = "sha256:2b2cfc7148493da5e73981bffbf3353af381d5f93e789c82c79aff64962eb556"
+url = "https://dl.google.com/go/go1.26.3.linux-amd64.tar.gz"
 
 [tools.go."platforms.linux-x64-baseline"]
-checksum = "sha256:990e6b4bbba816dc3ee129eaeaf4b42f17c2800b88a2166c265ac1a200262282"
-url = "https://dl.google.com/go/go1.26.2.linux-amd64.tar.gz"
+checksum = "sha256:2b2cfc7148493da5e73981bffbf3353af381d5f93e789c82c79aff64962eb556"
+url = "https://dl.google.com/go/go1.26.3.linux-amd64.tar.gz"
 
 [tools.go."platforms.linux-x64-musl"]
-checksum = "sha256:990e6b4bbba816dc3ee129eaeaf4b42f17c2800b88a2166c265ac1a200262282"
-url = "https://dl.google.com/go/go1.26.2.linux-amd64.tar.gz"
+checksum = "sha256:2b2cfc7148493da5e73981bffbf3353af381d5f93e789c82c79aff64962eb556"
+url = "https://dl.google.com/go/go1.26.3.linux-amd64.tar.gz"
 
 [tools.go."platforms.linux-x64-musl-baseline"]
-checksum = "sha256:990e6b4bbba816dc3ee129eaeaf4b42f17c2800b88a2166c265ac1a200262282"
-url = "https://dl.google.com/go/go1.26.2.linux-amd64.tar.gz"
+checksum = "sha256:2b2cfc7148493da5e73981bffbf3353af381d5f93e789c82c79aff64962eb556"
+url = "https://dl.google.com/go/go1.26.3.linux-amd64.tar.gz"
 
 [tools.go."platforms.macos-arm64"]
-checksum = "sha256:32af1522bf3e3ff3975864780a429cc0b41d190ec7bf90faa661d6d64566e7af"
-url = "https://dl.google.com/go/go1.26.2.darwin-arm64.tar.gz"
+checksum = "sha256:875cf54a15311eee2c99b9dd67c68c4a49351d489ab622bf2cfd28c8f2078d3c"
+url = "https://dl.google.com/go/go1.26.3.darwin-arm64.tar.gz"
 
 [tools.go."platforms.macos-x64"]
-checksum = "sha256:bc3f1500d9968c36d705442d90ba91addf9271665033748b82532682e90a7966"
-url = "https://dl.google.com/go/go1.26.2.darwin-amd64.tar.gz"
+checksum = "sha256:278d580b32e299fe4a9c990fcf2d02acfe538c7e551a6ee18f9c7164573d2c63"
+url = "https://dl.google.com/go/go1.26.3.darwin-amd64.tar.gz"
 
 [tools.go."platforms.macos-x64-baseline"]
-checksum = "sha256:bc3f1500d9968c36d705442d90ba91addf9271665033748b82532682e90a7966"
-url = "https://dl.google.com/go/go1.26.2.darwin-amd64.tar.gz"
+checksum = "sha256:278d580b32e299fe4a9c990fcf2d02acfe538c7e551a6ee18f9c7164573d2c63"
+url = "https://dl.google.com/go/go1.26.3.darwin-amd64.tar.gz"
 
 [tools.go."platforms.windows-x64"]
-checksum = "sha256:98eb3570bade15cb826b0909338df6cc6d2cf590bc39c471142002db3832b708"
-url = "https://dl.google.com/go/go1.26.2.windows-amd64.zip"
+checksum = "sha256:20d2ceafb4ed41b96b879010927b28bc92a5be57a7c1801ce365a9ca51d3224a"
+url = "https://dl.google.com/go/go1.26.3.windows-amd64.zip"
 
 [tools.go."platforms.windows-x64-baseline"]
-checksum = "sha256:98eb3570bade15cb826b0909338df6cc6d2cf590bc39c471142002db3832b708"
-url = "https://dl.google.com/go/go1.26.2.windows-amd64.zip"
+checksum = "sha256:20d2ceafb4ed41b96b879010927b28bc92a5be57a7c1801ce365a9ca51d3224a"
+url = "https://dl.google.com/go/go1.26.3.windows-amd64.zip"
 
 [[tools.java]]
 version = "26.0.1"
@@ -268,11 +268,11 @@ version = "11.6.4"
 backend = "npm:npm"
 
 [[tools."npm:@anthropic-ai/claude-code"]]
-version = "2.1.132"
+version = "2.1.139"
 backend = "npm:@anthropic-ai/claude-code"
 
 [[tools."npm:@anthropic-ai/sandbox-runtime"]]
-version = "0.0.50"
+version = "0.0.51"
 backend = "npm:@anthropic-ai/sandbox-runtime"
 
 [[tools."npm:@augmentcode/auggie"]]
@@ -280,7 +280,7 @@ version = "0.26.0"
 backend = "npm:@augmentcode/auggie"
 
 [[tools."npm:@cloudbase/cli"]]
-version = "3.3.0"
+version = "3.4.0-beta.2"
 backend = "npm:@cloudbase/cli"
 
 [[tools."npm:@cloudbase/cloudbase-mcp"]]
@@ -288,7 +288,7 @@ version = "2.18.0"
 backend = "npm:@cloudbase/cloudbase-mcp"
 
 [[tools."npm:@mariozechner/pi-coding-agent"]]
-version = "0.73.0"
+version = "0.73.1"
 backend = "npm:@mariozechner/pi-coding-agent"
 
 [[tools."npm:@murongg/aah-cli"]]
@@ -304,23 +304,23 @@ version = "0.130.0"
 backend = "npm:@openai/codex"
 
 [[tools."npm:@tencent-ai/codebuddy-code"]]
-version = "2.95.0"
+version = "2.96.0"
 backend = "npm:@tencent-ai/codebuddy-code"
 
 [[tools."npm:@tencent/claude-code-internal"]]
-version = "1.1.6"
+version = "1.1.7"
 backend = "npm:@tencent/claude-code-internal"
 
 [[tools."npm:@tencent/codex-internal"]]
-version = "0.0.8"
+version = "0.0.9"
 backend = "npm:@tencent/codex-internal"
 
 [[tools."npm:@yfme/weapp-dev-mcp"]]
-version = "0.2.3"
+version = "0.2.4"
 backend = "npm:@yfme/weapp-dev-mcp"
 
 [[tools."npm:agent-browser"]]
-version = "0.26.0"
+version = "0.27.0"
 backend = "npm:agent-browser"
 
 [[tools."npm:corepack"]]
@@ -348,15 +348,15 @@ version = "1.1.0"
 backend = "npm:node-firestore-import-export"
 
 [[tools."npm:npm-check-updates"]]
-version = "22.1.1"
+version = "22.2.0"
 backend = "npm:npm-check-updates"
 
 [[tools."npm:opencode-ai"]]
-version = "1.14.40"
+version = "1.14.48"
 backend = "npm:opencode-ai"
 
 [[tools."npm:pnpm"]]
-version = "10.33.4"
+version = "11.1.0"
 backend = "npm:pnpm"
 
 [[tools."npm:sharp-cli"]]
@@ -479,60 +479,60 @@ checksum = "sha256:a7e25570dd85f363581e96cac0b468257c45945ca8875d951413b6606c9b8
 url = "https://releases.hashicorp.com/terraform/1.15.2/terraform_1.15.2_windows_amd64.zip"
 
 [[tools.uv]]
-version = "0.11.11"
+version = "0.11.13"
 backend = "aqua:astral-sh/uv"
 
 [tools.uv."platforms.linux-arm64"]
-checksum = "sha256:0fc9a49b3900f77ffaccf3ff69a70ddbc1d479e70ac5d8fd6416a7577b03c5a1"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.11/uv-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:bea8a97b1b3ed41491e075c1f474e7f0249582aa3f62849c4e874b5f34ddc95e"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.13/uv-aarch64-unknown-linux-musl.tar.gz"
 provenance = "github-attestations"
 
 [tools.uv."platforms.linux-arm64-musl"]
-checksum = "sha256:0fc9a49b3900f77ffaccf3ff69a70ddbc1d479e70ac5d8fd6416a7577b03c5a1"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.11/uv-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:bea8a97b1b3ed41491e075c1f474e7f0249582aa3f62849c4e874b5f34ddc95e"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.13/uv-aarch64-unknown-linux-musl.tar.gz"
 provenance = "github-attestations"
 
 [tools.uv."platforms.linux-x64"]
-checksum = "sha256:80521f18ba83109acd17e0730bd8ff898c3426aa62252c627d63418b353e788a"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.11/uv-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:5635afc285df86ce6f05f3f22335f9548b0026e58531904482c9670a1c1c65d9"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.13/uv-x86_64-unknown-linux-musl.tar.gz"
 provenance = "github-attestations"
 
 [tools.uv."platforms.linux-x64-baseline"]
-checksum = "sha256:80521f18ba83109acd17e0730bd8ff898c3426aa62252c627d63418b353e788a"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.11/uv-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:5635afc285df86ce6f05f3f22335f9548b0026e58531904482c9670a1c1c65d9"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.13/uv-x86_64-unknown-linux-musl.tar.gz"
 provenance = "github-attestations"
 
 [tools.uv."platforms.linux-x64-musl"]
-checksum = "sha256:80521f18ba83109acd17e0730bd8ff898c3426aa62252c627d63418b353e788a"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.11/uv-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:5635afc285df86ce6f05f3f22335f9548b0026e58531904482c9670a1c1c65d9"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.13/uv-x86_64-unknown-linux-musl.tar.gz"
 provenance = "github-attestations"
 
 [tools.uv."platforms.linux-x64-musl-baseline"]
-checksum = "sha256:80521f18ba83109acd17e0730bd8ff898c3426aa62252c627d63418b353e788a"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.11/uv-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:5635afc285df86ce6f05f3f22335f9548b0026e58531904482c9670a1c1c65d9"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.13/uv-x86_64-unknown-linux-musl.tar.gz"
 provenance = "github-attestations"
 
 [tools.uv."platforms.macos-arm64"]
-checksum = "sha256:3a185bf8f46a7b7c8b910d111825907b1638d0ae503cb3c333ae205772354046"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.11/uv-aarch64-apple-darwin.tar.gz"
+checksum = "sha256:196a58aa24da89144187670df7c407358028984537fbc2f8f2d8f7a2604980df"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.13/uv-aarch64-apple-darwin.tar.gz"
 provenance = "github-attestations"
 
 [tools.uv."platforms.macos-x64"]
-checksum = "sha256:57a1a8085b4088fbcbd5080c0c30723ba6d0692c89cd071c08a4209e8da602d1"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.11/uv-x86_64-apple-darwin.tar.gz"
+checksum = "sha256:99aad3f4956f5b92efd83eca6d87bf03e10688899487ad541f904c9c25c61dc1"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.13/uv-x86_64-apple-darwin.tar.gz"
 provenance = "github-attestations"
 
 [tools.uv."platforms.macos-x64-baseline"]
-checksum = "sha256:57a1a8085b4088fbcbd5080c0c30723ba6d0692c89cd071c08a4209e8da602d1"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.11/uv-x86_64-apple-darwin.tar.gz"
+checksum = "sha256:99aad3f4956f5b92efd83eca6d87bf03e10688899487ad541f904c9c25c61dc1"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.13/uv-x86_64-apple-darwin.tar.gz"
 provenance = "github-attestations"
 
 [tools.uv."platforms.windows-x64"]
-checksum = "sha256:2f75a0db2c3530b6b3c24434dc38137f61ff1f4e5f2d7b4ddc5bcd142cf58b65"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.11/uv-x86_64-pc-windows-msvc.zip"
+checksum = "sha256:0953ac2ef4fbe47ad469bfa80b658a577a02c4d73a2fb9c4c7c70dda432efded"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.13/uv-x86_64-pc-windows-msvc.zip"
 provenance = "github-attestations"
 
 [tools.uv."platforms.windows-x64-baseline"]
-checksum = "sha256:2f75a0db2c3530b6b3c24434dc38137f61ff1f4e5f2d7b4ddc5bcd142cf58b65"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.11/uv-x86_64-pc-windows-msvc.zip"
+checksum = "sha256:0953ac2ef4fbe47ad469bfa80b658a577a02c4d73a2fb9c4c7c70dda432efded"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.13/uv-x86_64-pc-windows-msvc.zip"
 provenance = "github-attestations"
