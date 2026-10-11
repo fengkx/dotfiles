@@ -43,6 +43,7 @@ uv = "latest"
 "npm:whistle" = "2.9.97"
 "npm:yarn" = "latest"
 "npm:pnpm" = "latest"
+"github:zizmorcore/zizmor" = "latest"
 
 [env]
 UV_PYTHON = { value = "{{ tools.python.path }}", tools = true }

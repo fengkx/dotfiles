@@ -225,7 +225,7 @@
   "editor.formatOnSave": true,
   "beanLsp.trace.server": "verbose",
   "beanLsp.hover.includeSubaccountBalance": true,
-  "update.releaseTrack": "prerelease",
+  "update.releaseTrack": "stable",
   "terminal.integrated.fontFamily": "MesloLGS NF, Menlo , Monaco, 'Courier New', monospace",
   "[python]": {
     "diffEditor.ignoreTrimWhitespace": false,
@@ -245,5 +245,7 @@
   "git.showCursorWorktrees": true,
   "typescript.disableAutomaticTypeAcquisition": true,
   "extensions.gallery.serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
-  "workbench.sideBar.location": "right"
+  "workbench.sideBar.location": "right",
+  "window.autoDetectColorScheme": false,
+  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3"
 }

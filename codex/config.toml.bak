@@ -1,0 +1,224 @@
+model = "gpt-6.1-sol"
+model_reasoning_effort = "xhigh"
+personality = "pragmatic"
+
+sandbox_mode = "workspace-write"
+approvals_reviewer = "user"
+plan_mode_reasoning_effort = "high"
+
+
+notify = ["/Users/fengkx/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+service_tier = "default"
+
+[mcp_servers.context7]
+args = ["-y", "@upstash/context7-mcp"]
+command = "npx"
+startup_timeout_ms = 20_000
+
+
+[mcp_servers.chrome-devtools]
+command = "npx"
+args = ["chrome-devtools-mcp@latest"]
+
+[mcp_servers.weapp-devtool]
+command = "npx"
+args = ["@yfme/weapp-dev-mcp"]
+
+[mcp_servers.weapp-devtool.tools.mp_ensureConnection]
+approval_mode = "approve"
+
+
+writeable_roots = [
+    "/Users/fengkx/Library/pnpm/store",
+    "/Users/fengkx/.cache/uv",
+    "/Users/fengkx/.cache/clang/ModuleCache",
+    "/Users/fengkx/Library/Caches/org.swift.swiftpm",
+    "/Users/fengkx/Library/org.swift.swiftpm",
+]
+
+[mcp_servers.node_repl]
+args = []
+command = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node_repl"
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
+NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/fengkx/.codex:/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
+CODEX_HOME = "/Users/fengkx/.codex"
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab,mcpapps"
+BROWSER_USE_TINYSKY_ENABLED = "1"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = ""
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = ""
+NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = ""
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.928.31416"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/fengkx/.codex/plugins/cache/openai-bundled/browser/26.928.31416/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+SKY_CUA_SERVICE_PATH = "/Users/fengkx/.codex/computer-use/Codex Computer Use.app"
+CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex"
+
+[mcp_servers.computer-use]
+command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
+args = ["mcp"]
+cwd = "."
+enabled = false
+
+[projects."/Users/fengkx/me/code/macos-dictkit"]
+trust_level = "trusted"
+
+[projects."/Users/fengkx/genie-mp"]
+trust_level = "trusted"
+
+[projects."/Users/fengkx/me/code/dict-demo"]
+trust_level = "trusted"
+
+[projects."/Users/fengkx/mp-a"]
+trust_level = "trusted"
+
+[projects."/Users/fengkx/me/code/anki-mate"]
+trust_level = "trusted"
+
+[features]
+hooks = true
+multi_agent = true
+js_repl = false
+
+[projects."/Users/fengkx/dotfiles"]
+trust_level = "trusted"
+
+[projects."/Users/fengkx/me/code/NodeRSSBot"]
+trust_level = "trusted"
+
+[projects."/Users/fengkx/me/code/red-note-invest-road"]
+trust_level = "trusted"
+
+[projects."/Users/fengkx/me/code/beancount-assets"]
+trust_level = "trusted"
+
+[projects."/Users/fengkx/me/code/beancount-lsp"]
+trust_level = "trusted"
+
+[projects."/Users/fengkx/Downloads/CDViewer"]
+trust_level = "trusted"
+
+[projects."/Users/fengkx/me/code/bvn2_6"]
+trust_level = "trusted"
+
+[projects."/Users/fengkx/me/code/photobridge"]
+trust_level = "trusted"
+
+[tui]
+status_line = [
+    "model-with-reasoning",
+    "current-dir",
+    "project-root",
+    "git-branch",
+    "context-used",
+    "five-hour-limit",
+    "weekly-limit",
+    "total-input-tokens",
+    "total-output-tokens",
+]
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+
+
+[plugins."figma@openai-curated"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+
+
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+
+
+last_updated = "2026-04-26T04:59:44Z"
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
+enabled = true
+
+[plugins."visualize@openai-bundled"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."codex-app-tools@openai-bundled"]
+enabled = true
+
+[plugins."unified-computer-use@openai-bundled"]
+enabled = true
+
+[plugins."code-review@openai-bundled"]
+enabled = true
+
+[marketplaces.openai-bundled]
+source_type = "local"
+source = "/Users/fengkx/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[marketplaces.openai-primary-runtime]
+source_type = "local"
+source = "/Users/fengkx/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[desktop]
+sansFontSize = 14
+codeFontSize = 14
+localeOverride = "en-US"
+git-commit-instructions = "简明扼要，格式参考项目的历史提交记录，使用同样的格式和语言"
+followUpQueueMode = "queue"
+dock-icon-preference = "codex-system"
+enabled-reasoning-efforts = ["low", "medium", "high", "xhigh", "ultra", "max"]
+keepRemoteControlAwakeWhilePluggedIn = true
+
+[desktop.appearanceLightChromeTheme]
+accent = "#339cff"
+contrast = 45
+ink = "#1a1c1f"
+opaqueWindows = false
+surface = "#ffffff"
+
+[desktop.appearanceLightChromeTheme.fonts]
+code = "Maple Mono Normal NF CN, JetBrainsMono Nerd Font, Menlo , Monaco, 'Courier New', monospace"
+
+[desktop.appearanceLightChromeTheme.semanticColors]
+diffAdded = "#00a240"
+diffRemoved = "#ba2623"
+skill = "#924ff7"
+
+[desktop.appearanceDarkChromeTheme]
+accent = "#339cff"
+contrast = 60
+ink = "#ffffff"
+opaqueWindows = false
+surface = "#181818"
+
+[desktop.appearanceDarkChromeTheme.fonts]
+code = "Maple Mono Normal NF CN, JetBrainsMono Nerd Font, Menlo , Monaco, 'Courier New', monospace"
+
+[desktop.appearanceDarkChromeTheme.semanticColors]
+diffAdded = "#40c977"
+diffRemoved = "#fa423e"
+skill = "#ad7bf9"
+
+[desktop.open-in-target-preferences]
+global = "cursor"
+
+[desktop.open-in-target-preferences.perPath]
+"/Users/fengkx/me/code/NodeRSSBot" = "cursor"
+
+[shell_environment_policy.set]
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "028a14b6eaa6d98dac2aae00764345ab9f244801ed8493d42b9af3be5575006e,8785b5437d98636c3002d3d7e64b98db79c3b66870b1bd3d18dea953a99b1562"
