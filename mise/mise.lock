@@ -574,20 +574,12 @@ version = "2.0.0"
 backend = "npm:@musistudio/claude-code-router"
 
 [[tools."npm:@openai/codex"]]
-version = "0.163.0"
+version = "0.167.0"
 backend = "npm:@openai/codex"
 
 [[tools."npm:@tencent-ai/codebuddy-code"]]
 version = "2.114.2"
 backend = "npm:@tencent-ai/codebuddy-code"
-
-[[tools."npm:@tencent/claude-code-internal"]]
-version = "1.1.9"
-backend = "npm:@tencent/claude-code-internal"
-
-[[tools."npm:@tencent/codex-internal"]]
-version = "0.0.9"
-backend = "npm:@tencent/codex-internal"
 
 [[tools."npm:@yfme/weapp-dev-mcp"]]
 version = "0.2.5"
