@@ -1,0 +1,309 @@
+#!/usr/bin/env sh
+set -eu
+
+PROG_NAME="$(basename -- "$0")"
+DEFAULT_HOST="127.0.0.1"
+DEFAULT_NO_PROXY="localhost,127.0.0.1,::1"
+
+usage() {
+  cat <<EOF
+Usage: $PROG_NAME [options] <proxy> [--] [command [args...]]
+
+Run a command (or an interactive subshell if no command is given) with proxy
+environment variables configured, without modifying the current shell.
+
+Proxy formats (default scheme: http, default host: $DEFAULT_HOST):
+  7890 | :7890                    -> http://127.0.0.1:7890
+  10.0.0.2:8080                   -> http://10.0.0.2:8080
+  [::1]:7890                      -> http://[::1]:7890
+  socks5://7890 | socks5://:7890  -> socks5://127.0.0.1:7890
+  socks5h://:7890                 -> socks5h://127.0.0.1:7890
+  http://user:pass@host:8080      -> http://user:pass@host:8080
+
+Options (must appear before <proxy>):
+  -s, --socks             Use socks5 as default scheme when omitted
+  -n, --no-proxy <list>   Set NO_PROXY (default: $DEFAULT_NO_PROXY)
+                          Prefix with '+' to append (e.g. -n '+.oa.com')
+      --no-ssh            Do not set GIT_SSH_COMMAND or wrap ssh/scp/sftp
+  -v, --verbose           Print effective proxy settings to stderr
+  -h, --help              Show this help message
+
+Examples:
+  $PROG_NAME 7890 curl -I https://google.com
+  $PROG_NAME -s 7890 git fetch
+  $PROG_NAME web-proxy.oa.com:8080 npm install
+  $PROG_NAME -n "+.oa.com" 7890 ssh user@github.com
+  $PROG_NAME 7890
+EOF
+}
+
+die() {
+  printf '%s: %s\n' "$PROG_NAME" "$*" >&2
+  exit 2
+}
+
+default_scheme="http"
+no_proxy_val="$DEFAULT_NO_PROXY"
+enable_ssh=1
+verbose=0
+proxy_arg=""
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    -h|--help)
+      usage
+      exit 0
+      ;;
+    -s|--socks)
+      default_scheme="socks5"
+      shift
+      ;;
+    -n|--no-proxy)
+      [ $# -ge 2 ] || die "option '$1' requires an argument"
+      case "$2" in
+        +*)
+          append="${2#+}"
+          if [ -n "$append" ]; then
+            if [ -n "$no_proxy_val" ]; then
+              no_proxy_val="${no_proxy_val},${append}"
+            else
+              no_proxy_val="$append"
+            fi
+          fi
+          ;;
+        *)
+          no_proxy_val="$2"
+          ;;
+      esac
+      shift 2
+      ;;
+    --no-proxy=*)
+      val="${1#--no-proxy=}"
+      case "$val" in
+        +*)
+          append="${val#+}"
+          if [ -n "$append" ]; then
+            if [ -n "$no_proxy_val" ]; then
+              no_proxy_val="${no_proxy_val},${append}"
+            else
+              no_proxy_val="$append"
+            fi
+          fi
+          ;;
+        *)
+          no_proxy_val="$val"
+          ;;
+      esac
+      shift
+      ;;
+    --no-ssh)
+      enable_ssh=0
+      shift
+      ;;
+    -v|--verbose)
+      verbose=1
+      shift
+      ;;
+    --)
+      shift
+      [ $# -gt 0 ] || die "missing <proxy> argument (run '$PROG_NAME --help' for usage)"
+      proxy_arg="$1"
+      shift
+      break
+      ;;
+    -*)
+      die "unknown option '$1' (run '$PROG_NAME --help' for usage)"
+      ;;
+    *)
+      proxy_arg="$1"
+      shift
+      break
+      ;;
+  esac
+done
+
+[ -n "$proxy_arg" ] || die "missing <proxy> argument (run '$PROG_NAME --help' for usage)"
+
+# Allow an optional '--' separator between <proxy> and <command>
+if [ $# -gt 0 ] && [ "$1" = "--" ]; then
+  shift
+fi
+
+# 1. Extract scheme
+case "$proxy_arg" in
+  *://*)
+    scheme="${proxy_arg%%://*}"
+    rest="${proxy_arg#*://}"
+    ;;
+  *)
+    scheme="$default_scheme"
+    rest="$proxy_arg"
+    ;;
+esac
+
+scheme="$(printf '%s' "$scheme" | tr '[:upper:]' '[:lower:]')"
+case "$scheme" in
+  http|https|socks|socks4|socks4a|socks5|socks5h) ;;
+  *)
+    die "unsupported proxy scheme '$scheme' in '$proxy_arg'"
+    ;;
+esac
+
+# 2. Split optional path
+case "$rest" in
+  */*)
+    authority="${rest%%/*}"
+    path="/${rest#*/}"
+    ;;
+  *)
+    authority="$rest"
+    path=""
+    ;;
+esac
+[ "$path" = "/" ] && path=""
+
+# 3. Extract optional userinfo
+case "$authority" in
+  *@*)
+    userinfo="${authority%@*}"
+    hostport="${authority##*@}"
+    ;;
+  *)
+    userinfo=""
+    hostport="$authority"
+    ;;
+esac
+
+# 4. Split host and port
+host=""
+port=""
+case "$hostport" in
+  "")
+    die "invalid proxy '$proxy_arg': missing host and port"
+    ;;
+  *[!0-9]*)
+    case "$hostport" in
+      :*:*)
+        die "invalid proxy '$proxy_arg': IPv6 host must be bracketed (e.g. [::1]:7890)"
+        ;;
+      :*)
+        host="$DEFAULT_HOST"
+        port="${hostport#:}"
+        ;;
+      \[*\]:*)
+        host="${hostport%\]:*}]"
+        port="${hostport##*\]:}"
+        ;;
+      \[*\])
+        die "invalid proxy '$proxy_arg': port is required (e.g. [::1]:7890)"
+        ;;
+      *:*)
+        host="${hostport%:*}"
+        port="${hostport##*:}"
+        case "$host" in
+          *:*)
+            die "invalid proxy '$proxy_arg': IPv6 host must be bracketed (e.g. [::1]:7890)"
+            ;;
+        esac
+        ;;
+      *)
+        die "invalid proxy '$proxy_arg': port is required (e.g. 7890 or host:7890)"
+        ;;
+    esac
+    ;;
+  *)
+    host="$DEFAULT_HOST"
+    port="$hostport"
+    ;;
+esac
+
+# Validate host and port
+[ -n "$host" ] || die "invalid proxy '$proxy_arg': empty host"
+case "$host" in
+  *[!][A-Za-z0-9.:_-]*)
+    die "invalid proxy host '$host' in '$proxy_arg'"
+    ;;
+esac
+
+case "$port" in
+  ""|*[!0-9]*|0*)
+    die "invalid proxy port '$port' in '$proxy_arg' (must be 1-65535)"
+    ;;
+esac
+if [ "$port" -lt 1 ] || [ "$port" -gt 65535 ]; then
+  die "invalid proxy port '$port' in '$proxy_arg' (must be 1-65535)"
+fi
+
+# Build normalized proxy URL
+if [ -n "$userinfo" ]; then
+  proxy_url="${scheme}://${userinfo}@${host}:${port}${path}"
+else
+  proxy_url="${scheme}://${host}:${port}${path}"
+fi
+nc_hostport="${host}:${port}"
+
+# Export proxy environment variables
+export \
+  HTTP_PROXY="$proxy_url" \
+  HTTPS_PROXY="$proxy_url" \
+  ALL_PROXY="$proxy_url" \
+  FTP_PROXY="$proxy_url" \
+  RSYNC_PROXY="$proxy_url" \
+  http_proxy="$proxy_url" \
+  https_proxy="$proxy_url" \
+  all_proxy="$proxy_url" \
+  ftp_proxy="$proxy_url" \
+  rsync_proxy="$proxy_url" \
+  WITH_PROXY="$proxy_url"
+
+if [ -n "$no_proxy_val" ]; then
+  export NO_PROXY="$no_proxy_val" no_proxy="$no_proxy_val"
+else
+  unset NO_PROXY no_proxy
+fi
+
+# Configure Git / SSH ProxyCommand
+ssh_proxy_cmd=""
+if [ "$enable_ssh" -eq 1 ]; then
+  case "$scheme" in
+    http|https)       nc_proto="connect" ;;
+    socks|socks5*)    nc_proto="5" ;;
+    socks4*)          nc_proto="4" ;;
+  esac
+  ssh_proxy_cmd="nc -X $nc_proto -x $nc_hostport %h %p"
+  export GIT_SSH_COMMAND="ssh -o ProxyCommand='$ssh_proxy_cmd'"
+fi
+
+if [ "$verbose" -eq 1 ]; then
+  printf '%s: PROXY=%s\n' "$PROG_NAME" "$proxy_url" >&2
+  printf '%s: NO_PROXY=%s\n' "$PROG_NAME" "$no_proxy_val" >&2
+  if [ -n "$ssh_proxy_cmd" ]; then
+    printf '%s: GIT_SSH_COMMAND=%s\n' "$PROG_NAME" "$GIT_SSH_COMMAND" >&2
+  fi
+fi
+
+# Subshell mode when no command is provided
+if [ $# -eq 0 ]; then
+  printf '%s: entering subshell with %s (exit or Ctrl-D to leave)\n' "$PROG_NAME" "$proxy_url" >&2
+  exec "${SHELL:-/bin/sh}"
+fi
+
+# Automatically inject ProxyCommand for direct ssh/scp/sftp invocations
+if [ "$enable_ssh" -eq 1 ]; then
+  cmd_base="$(basename -- "$1")"
+  case "$cmd_base" in
+    ssh|scp|sftp|slogin|ssh-copy-id)
+      cmd="$1"
+      shift
+      if [ "$verbose" -eq 1 ]; then
+        printf '%s: exec %s -o ProxyCommand=%s %s\n' "$PROG_NAME" "$cmd" "$ssh_proxy_cmd" "$*" >&2
+      fi
+      exec "$cmd" -o "ProxyCommand=$ssh_proxy_cmd" "$@"
+      ;;
+  esac
+fi
+
+if [ "$verbose" -eq 1 ]; then
+  printf '%s: exec %s\n' "$PROG_NAME" "$*" >&2
+fi
+exec "$@"
