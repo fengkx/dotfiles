@@ -262,3 +262,5 @@ path=($HOME/.codebuddy/bin $path)
 
 # Added by CodeBuddy CN
 export PATH="/Users/fengkx/.codebuddy/bin:$PATH"
+
+. "$HOME/.local/bin/env"

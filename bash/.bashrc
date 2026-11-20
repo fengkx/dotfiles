@@ -17,3 +17,4 @@ vagrant_completion
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.sjtug.sjtu.edu.cn/homebrew-bottles/bottles
 fi
+. "$HOME/.local/bin/env"

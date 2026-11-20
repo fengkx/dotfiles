@@ -22,7 +22,6 @@ uv = "latest"
 "npm:@augmentcode/auggie" = "latest"
 "npm:@cloudbase/cli" = "latest"
 "npm:@cloudbase/cloudbase-mcp" = "latest"
-"npm:@mariozechner/pi-coding-agent" = "latest"
 "npm:@murongg/aah-cli" = "latest"
 "npm:@musistudio/claude-code-router" = "latest"
 "npm:@openai/codex" = "latest"
@@ -44,6 +43,8 @@ uv = "latest"
 "npm:yarn" = "latest"
 "npm:pnpm" = "latest"
 "github:zizmorcore/zizmor" = "latest"
+herdr = "latest"
+"npm:@earendil-works/pi-coding-agent" = "0.87.1"
 
 [env]
 UV_PYTHON = { value = "{{ tools.python.path }}", tools = true }

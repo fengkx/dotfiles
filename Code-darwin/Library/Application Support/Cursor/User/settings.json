@@ -1,19 +1,19 @@
 {
   "editor.fontSize": 16,
   "[json]": {
-    "editor.defaultFormatter": "denoland.vscode-deno"
+    "editor.defaultFormatter": "denoland.vscode-deno",
   },
   "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "vscode.typescript-language-features",
   },
   "eslint.alwaysShowStatus": true,
   "eslint.format.enable": true,
   "emmet.triggerExpansionOnTab": true,
   "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "editor.inlineSuggest.enabled": true,
   "github.copilot.enable": {
@@ -23,14 +23,14 @@
     "markdown": true,
     "json": true,
     "typescript": true,
-    "rust": false
+    "rust": false,
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "editor.bracketPairColorization.enabled": true,
   "[jsonc]": {
-    "editor.defaultFormatter": "dprint.dprint"
+    "editor.defaultFormatter": "dprint.dprint",
   },
   "editor.cursorBlinking": "phase",
   "editor.suggest.snippetsPreventQuickSuggestions": false,
@@ -41,7 +41,7 @@
   "files.associations": {
     "tsconfig.json": "jsonc",
     "*.wxss": "css",
-    "*.wxml": "xml"
+    "*.wxml": "xml",
   },
   // "explorer.experimental.fileNesting.enabled": true,
   // "explorer.experimental.fileNesting.patterns": {
@@ -58,13 +58,13 @@
   "editor.accessibilitySupport": "off",
   "editor.experimental": {
     "stickyScroll": {
-      "enabled": true
-    }
+      "enabled": true,
+    },
   },
   "editor.stickyScroll.enabled": true,
   "npm.keybindingsChangedWarningShown": true,
   "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "cSpell.userWords": [
     "bytedance",
@@ -76,17 +76,21 @@
     "langchain",
     "openai",
     "Tencent",
-    "tsbuildinfo"
+    "tsbuildinfo",
   ],
   "beancount.mainBeanFile": "main.bean",
   "beancount.python3Path": "python",
   "svelte.enable-ts-plugin": true,
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "jest.autoRun": "off",
   "window.nativeTabs": true,
   "window.titleBarStyle": "native",
+  "remote.SSH.lockfilesInTmp": true,
+  "remote.SSH.connectTimeout": 60,
+  "remote.SSH.useExecServer": false,
+  "remote.SSH.loglevel": 3,
   "gitlens.remotes": [
     {
       "domain": "git.woa.com",
@@ -101,10 +105,10 @@
         "fileInBranch": "https://git.woa.com/${repo}/blob/${branch}/${file}${line}",
         "fileInCommit": "https://git.woa.com/${repo}/blob/${id}/${file}${line}",
         "fileLine": "#L${line}",
-        "fileRange": "#L${start}-L${end}"
+        "fileRange": "#L${start}-L${end}",
       },
-      "name": "Gongfeng-woa"
-    }
+      "name": "Gongfeng-woa",
+    },
   ],
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
@@ -203,7 +207,7 @@
     "*.vue": "$(capture).*.ts, $(capture).*.js, $(capture).story.vue",
     "*.w": "$(capture).*.w, I$(capture).w",
     "*.wat": "$(capture).wasm",
-    "*.xaml": "$(capture).xaml.cs"
+    "*.xaml": "$(capture).xaml.cs",
   },
   "window.zoomLevel": 1,
   "beancount.inputMethods": ["pinyin"],
@@ -216,7 +220,7 @@
   "editor.linkedEditing": true,
   "workbench.editor.pinnedTabsOnSeparateRow": true,
   "accessibility.signals.terminalBell": {
-    "sound": "off"
+    "sound": "off",
   },
   "terminal.integrated.enableVisualBell": true,
   "editor.unicodeHighlight.ambiguousCharacters": false,
@@ -225,27 +229,36 @@
   "editor.formatOnSave": true,
   "beanLsp.trace.server": "verbose",
   "beanLsp.hover.includeSubaccountBalance": true,
-  "update.releaseTrack": "stable",
+  "update.releaseTrack": "dev",
   "terminal.integrated.fontFamily": "MesloLGS NF, Menlo , Monaco, 'Courier New', monospace",
   "[python]": {
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.defaultColorDecorators": "never",
     "gitlens.codeLens.symbolScopes": ["!Module"],
     "editor.formatOnType": true,
-    "editor.wordBasedSuggestions": "off"
+    "editor.wordBasedSuggestions": "off",
   },
 
   "workbench.colorCustomizations": {
-    "editorInlayHint.background": "#00000000"
+    "editorInlayHint.background": "#00000000",
   },
   "[beancount]": {
     "editor.inlayHints.enabled": "on",
-    "editor.inlayHints.maximumLength": 0
+    "editor.inlayHints.maximumLength": 0,
   },
   "git.showCursorWorktrees": true,
   "typescript.disableAutomaticTypeAcquisition": true,
-  "extensions.gallery.serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
+  // "extensions.gallery.serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
   "workbench.sideBar.location": "right",
   "window.autoDetectColorScheme": false,
-  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3"
+  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
+  "http.proxy": "http://127.0.0.1:8899",
+  "remote.autoForwardPortsSource": "hybrid",
+  "remote.SSH.remotePlatform": {
+    "9.135.228.131": "linux"
+  },
+  "workbench.editorAssociations": {
+    "*.svg": "default"
+  },
+  "cursor.composer.conversationDensity": "compact-ungrouped",
 }

@@ -1,5 +1,5 @@
-model = "gpt-6.1-sol"
-model_reasoning_effort = "xhigh"
+model = "gpt-5.5"
+model_reasoning_effort = "medium"
 personality = "pragmatic"
 
 sandbox_mode = "workspace-write"
@@ -8,7 +8,6 @@ plan_mode_reasoning_effort = "high"
 
 
 notify = ["/Users/fengkx/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
-service_tier = "default"
 
 [mcp_servers.context7]
 args = ["-y", "@upstash/context7-mcp"]
@@ -20,12 +19,12 @@ startup_timeout_ms = 20_000
 command = "npx"
 args = ["chrome-devtools-mcp@latest"]
 
-[mcp_servers.weapp-devtool]
-command = "npx"
-args = ["@yfme/weapp-dev-mcp"]
-
-[mcp_servers.weapp-devtool.tools.mp_ensureConnection]
-approval_mode = "approve"
+#[mcp_servers.weapp-devtool]
+#command = "npx"
+#args = ["@yfme/weapp-dev-mcp"]
+#
+#[mcp_servers.weapp-devtool.tools.mp_ensureConnection]
+#approval_mode = "approve"
 
 
 writeable_roots = [
@@ -38,31 +37,22 @@ writeable_roots = [
 
 [mcp_servers.node_repl]
 args = []
-command = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node_repl"
+command = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node_repl"
 startup_timeout_sec = 120
 
 [mcp_servers.node_repl.env]
 NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
-NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
-NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
-NODE_REPL_TRUSTED_CODE_PATHS = "/Users/fengkx/.codex:/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
+NODE_REPL_NODE_MODULE_DIRS = "/Applications/Codex.app/Contents/Resources/cua_node/lib/node_modules"
+NODE_REPL_NODE_PATH = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/fengkx/.codex"
 CODEX_HOME = "/Users/fengkx/.codex"
-BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab,mcpapps"
-BROWSER_USE_TINYSKY_ENABLED = "1"
-NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = ""
-NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = ""
-NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = ""
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "cb79053fda6deb0f3b5d6f0d90d4257305ebdbd1e378a12e8fbc5bde782eb59b"
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.928.31416"
-NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/fengkx/.codex/plugins/cache/openai-bundled/browser/26.928.31416/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
-SKY_CUA_SERVICE_PATH = "/Users/fengkx/.codex/computer-use/Codex Computer Use.app"
-CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex"
-
-[mcp_servers.computer-use]
-command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
-args = ["mcp"]
-cwd = "."
-enabled = false
+BROWSER_USE_CODEX_APP_VERSION = "26.623.81905"
+CODEX_CLI_PATH = "/Applications/Codex.app/Contents/Resources/codex"
 
 [projects."/Users/fengkx/me/code/macos-dictkit"]
 trust_level = "trusted"
@@ -80,8 +70,10 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [features]
-hooks = true
 multi_agent = true
+terminal_resize_reflow = true
+memories = true
+goals = true
 js_repl = false
 
 [projects."/Users/fengkx/dotfiles"]
@@ -90,22 +82,19 @@ trust_level = "trusted"
 [projects."/Users/fengkx/me/code/NodeRSSBot"]
 trust_level = "trusted"
 
-[projects."/Users/fengkx/me/code/red-note-invest-road"]
-trust_level = "trusted"
-
-[projects."/Users/fengkx/me/code/beancount-assets"]
-trust_level = "trusted"
-
 [projects."/Users/fengkx/me/code/beancount-lsp"]
 trust_level = "trusted"
 
-[projects."/Users/fengkx/Downloads/CDViewer"]
+[projects."/Users/fengkx/me/code/red-note-invest-road"]
 trust_level = "trusted"
 
-[projects."/Users/fengkx/me/code/bvn2_6"]
+[projects."/Users/fengkx/me/code/lkdots"]
 trust_level = "trusted"
 
-[projects."/Users/fengkx/me/code/photobridge"]
+[projects."/Users/fengkx/me/code/mp-spelling-bee"]
+trust_level = "trusted"
+
+[projects."/Users/fengkx/lowcode/tcb-bff-service"]
 trust_level = "trusted"
 
 [tui]
@@ -128,11 +117,6 @@ status_line = [
 [plugins."figma@openai-curated"]
 enabled = true
 
-[plugins."computer-use@openai-bundled"]
-
-
-enabled = true
-
 [plugins."documents@openai-primary-runtime"]
 enabled = true
 
@@ -145,49 +129,41 @@ enabled = true
 last_updated = "2026-04-26T04:59:44Z"
 enabled = true
 
+[plugins."github@openai-curated"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
 [plugins."pdf@openai-primary-runtime"]
 enabled = true
 
 [plugins."template-creator@openai-primary-runtime"]
 enabled = true
 
-[plugins."visualize@openai-bundled"]
-enabled = true
-
-[plugins."browser@openai-bundled"]
-enabled = true
-
-[plugins."codex-app-tools@openai-bundled"]
-enabled = true
-
-[plugins."unified-computer-use@openai-bundled"]
-enabled = true
-
-[plugins."code-review@openai-bundled"]
-enabled = true
-
 [marketplaces.openai-bundled]
+last_updated = "2026-07-02T03:11:14Z"
 source_type = "local"
 source = "/Users/fengkx/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
+last_updated = "2026-07-01T06:54:40Z"
 source_type = "local"
 source = "/Users/fengkx/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
 [desktop]
 sansFontSize = 14
-codeFontSize = 14
+codeFontSize = 16
 localeOverride = "en-US"
 git-commit-instructions = "简明扼要，格式参考项目的历史提交记录，使用同样的格式和语言"
+notifications-permissions-enabled = true
+conversationDetailMode = "STEPS_COMMANDS"
 followUpQueueMode = "queue"
-dock-icon-preference = "codex-system"
-enabled-reasoning-efforts = ["low", "medium", "high", "xhigh", "ultra", "max"]
-keepRemoteControlAwakeWhilePluggedIn = true
 
 [desktop.appearanceLightChromeTheme]
-accent = "#339cff"
+accent = "#0285ff"
 contrast = 45
-ink = "#1a1c1f"
+ink = "#0d0d0d"
 opaqueWindows = false
 surface = "#ffffff"
 
@@ -218,7 +194,4 @@ skill = "#ad7bf9"
 global = "cursor"
 
 [desktop.open-in-target-preferences.perPath]
-"/Users/fengkx/me/code/NodeRSSBot" = "cursor"
-
-[shell_environment_policy.set]
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "028a14b6eaa6d98dac2aae00764345ab9f244801ed8493d42b9af3be5575006e,8785b5437d98636c3002d3d7e64b98db79c3b66870b1bd3d18dea953a99b1562"
+"/Users/fengkx/genie-mp" = "cursor"
