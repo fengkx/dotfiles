@@ -187,7 +187,7 @@ cask "keepassxc"
 cask "kindle"
 cask "kitty"
 cask "launchcontrol"
-cask "fengkx/tap/lkdots"
+brew "fengkx/tap/lkdots"
 cask "logseq"
 cask "lunar"
 cask "lyricsx", args: { appdir: "/Applications" }
