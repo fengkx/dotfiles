@@ -9,3 +9,4 @@ RimeSync/mac/custom_phrase.txt/*
 !RimeSync/mac/custom_phrase.txt/*.enc
 claude-code/models/*
 !claude-code/models/*.enc
+local-bin/.local/bin/*
