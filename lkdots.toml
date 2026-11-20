@@ -163,8 +163,8 @@ to = "~/.config/opencode/opencode.json"
 platforms = ["darwin", "linux"]
 
 [[entries]]
-from = "~/dotfiles/codex"
-to = "~/.codex"
+from = "~/dotfiles/codex/AGENTS.md"
+to = "~/.codex/AGENTS.md"
 platforms = ["darwin", "linux"]
 
 [[projections]]
@@ -174,8 +174,8 @@ source = "~/dotfiles/npm/npmrc.public"
 target = "~/.npmrc"
 
 [[projections]]
-name = "codex-global-state"
-driver = "json"
-source = "~/dotfiles/codex/global-state.partial.json"
-target = "~/.codex/.codex-global-state.json"
+name = "codex-config"
+driver = "toml"
+source = "~/dotfiles/codex/config.partial.toml"
+target = "~/.codex/config.toml"
 

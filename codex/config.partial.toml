@@ -1,0 +1,82 @@
+model = "gpt-6.2-sol"
+model_reasoning_effort = "medium"
+personality = "pragmatic"
+
+sandbox_mode = "workspace-write"
+approvals_reviewer = "user"
+plan_mode_reasoning_effort = "high"
+service_tier = "default"
+
+[mcp_servers.context7]
+args = ["-y", "@upstash/context7-mcp"]
+command = "npx"
+startup_timeout_ms = 20_000
+
+[mcp_servers.chrome-devtools]
+command = "npx"
+args = ["chrome-devtools-mcp@latest"]
+
+[features]
+hooks = true
+multi_agent = true
+terminal_resize_reflow = true
+memories = true
+goals = true
+js_repl = false
+
+[tui]
+status_line = [
+    "model-with-reasoning",
+    "current-dir",
+    "project-root",
+    "git-branch",
+    "context-used",
+    "five-hour-limit",
+    "weekly-limit",
+    "total-input-tokens",
+    "total-output-tokens",
+]
+
+[desktop]
+sansFontSize = 14
+codeFontSize = 16
+localeOverride = "en-US"
+git-commit-instructions = "简明扼要，格式参考项目的历史提交记录，使用同样的格式和语言"
+notifications-permissions-enabled = true
+conversationDetailMode = "STEPS_COMMANDS"
+dock-icon-preference = "codex-system"
+reduced-motion-preference = "on"
+enabled-reasoning-efforts = ["low", "medium", "high", "xhigh", "ultra", "max"]
+
+[desktop.appearanceLightChromeTheme]
+accent = "#0285ff"
+contrast = 45
+ink = "#0d0d0d"
+opaqueWindows = false
+surface = "#ffffff"
+
+[desktop.appearanceLightChromeTheme.fonts]
+code = "Maple Mono Normal NF CN, JetBrainsMono Nerd Font, Menlo , Monaco, 'Courier New', monospace"
+
+[desktop.appearanceLightChromeTheme.semanticColors]
+diffAdded = "#00a240"
+diffRemoved = "#ba2623"
+skill = "#924ff7"
+
+[desktop.appearanceDarkChromeTheme]
+accent = "#339cff"
+contrast = 60
+ink = "#ffffff"
+opaqueWindows = false
+surface = "#181818"
+
+[desktop.appearanceDarkChromeTheme.fonts]
+code = "Maple Mono Normal NF CN, JetBrainsMono Nerd Font, Menlo , Monaco, 'Courier New', monospace"
+
+[desktop.appearanceDarkChromeTheme.semanticColors]
+diffAdded = "#40c977"
+diffRemoved = "#fa423e"
+skill = "#ad7bf9"
+
+[desktop.open-in-target-preferences]
+global = "cursor"
