@@ -148,6 +148,25 @@ url = "https://builds.hex.pm/builds/elixir/v1.20.2-otp-29.zip"
 version = "29.0.2"
 backend = "core:erlang"
 
+[tools.erlang.options]
+precompiled_os = "ubuntu-24.04"
+
+[tools.erlang."platforms.linux-arm64"]
+checksum = "sha256:b54705e7dc8fe1038a27e9cc2f9a2e76365e5e7a2e09bde45d82e3879ab78d65"
+url = "https://builds.hex.pm/builds/otp/arm64/ubuntu-24.04/OTP-29.0.2.tar.gz"
+
+[tools.erlang."platforms.linux-x64"]
+checksum = "sha256:bdf760c47c478a8937ffa9adb6aee65183b03137c81c116af22df681022ae7af"
+url = "https://builds.hex.pm/builds/otp/amd64/ubuntu-24.04/OTP-29.0.2.tar.gz"
+
+[tools.erlang."platforms.linux-x64-baseline"]
+checksum = "sha256:bdf760c47c478a8937ffa9adb6aee65183b03137c81c116af22df681022ae7af"
+url = "https://builds.hex.pm/builds/otp/amd64/ubuntu-24.04/OTP-29.0.2.tar.gz"
+
+[[tools.erlang]]
+version = "29.0.2"
+backend = "core:erlang"
+
 [tools.erlang."platforms.linux-arm64-musl"]
 checksum = "sha256:b9a7714fdd282c4a7113651b1e2728a58799e60ffe20e545f5cc94c621527b15"
 url = "https://github.com/erlang/otp/releases/download/OTP-29.0.2/otp_src_29.0.2.tar.gz"
@@ -190,25 +209,6 @@ url_api = "https://api.github.com/repos/erlang/otp/releases/assets/443733928"
 checksum = "sha256:dffd5fca2e841267bfb4e961c38bb18436a4b55548deae727d5691a984f7b80f"
 url = "https://github.com/erlang/otp/releases/download/OTP-29.0.2/otp_win64_29.0.2.zip"
 url_api = "https://api.github.com/repos/erlang/otp/releases/assets/443733928"
-
-[[tools.erlang]]
-version = "29.0.2"
-backend = "core:erlang"
-
-[tools.erlang.options]
-precompiled_os = "ubuntu-24.04"
-
-[tools.erlang."platforms.linux-arm64"]
-checksum = "sha256:b54705e7dc8fe1038a27e9cc2f9a2e76365e5e7a2e09bde45d82e3879ab78d65"
-url = "https://builds.hex.pm/builds/otp/arm64/ubuntu-24.04/OTP-29.0.2.tar.gz"
-
-[tools.erlang."platforms.linux-x64"]
-checksum = "sha256:bdf760c47c478a8937ffa9adb6aee65183b03137c81c116af22df681022ae7af"
-url = "https://builds.hex.pm/builds/otp/amd64/ubuntu-24.04/OTP-29.0.2.tar.gz"
-
-[tools.erlang."platforms.linux-x64-baseline"]
-checksum = "sha256:bdf760c47c478a8937ffa9adb6aee65183b03137c81c116af22df681022ae7af"
-url = "https://builds.hex.pm/builds/otp/amd64/ubuntu-24.04/OTP-29.0.2.tar.gz"
 
 [[tools."github:longbridge/longbridge-terminal"]]
 version = "0.24.0"
@@ -447,91 +447,100 @@ url = "https://github.com/herdrdev/herdr/releases/download/v0.9.5/herdr-windows-
 url_api = "https://api.github.com/repos/herdrdev/herdr/releases/assets/640898234"
 
 [[tools.java]]
-version = "26.0.1"
+version = "liberica-27.0.1+11"
 backend = "core:java"
 
-[tools.java.options]
-shorthand_vendor = "openjdk"
-
 [tools.java."platforms.linux-arm64"]
-checksum = "sha256:12a3649b2f4a0c9f6491d220bdd04b4fff07cae502b435aaff46eac0e36f4df1"
-url = "https://download.java.net/java/GA/jdk26.0.1/458fda22e4c54d5ba572ab8d2b22eb83/8/GPL/openjdk-26.0.1_linux-aarch64_bin.tar.gz"
+checksum = "sha1:462c880696a1f41387fa92d42d6474955c8dbbfa"
+url = "https://github.com/bell-sw/Liberica/releases/download/27.0.1%2B11/bellsoft-jdk27.0.1%2B11-linux-aarch64.tar.gz"
+
+[tools.java."platforms.linux-arm64-musl"]
+checksum = "sha1:78d5bed41f4f859306f0456b352f795a7a03866f"
+url = "https://github.com/bell-sw/Liberica/releases/download/27.0.1%2B11/bellsoft-jdk27.0.1%2B11-linux-aarch64-musl.tar.gz"
 
 [tools.java."platforms.linux-x64"]
-checksum = "sha256:2f2802d57b5fc414f1ddf6648ba12cc9a6454cf67b32ac95407c018f2e6ab0b0"
-url = "https://download.java.net/java/GA/jdk26.0.1/458fda22e4c54d5ba572ab8d2b22eb83/8/GPL/openjdk-26.0.1_linux-x64_bin.tar.gz"
+checksum = "sha1:be1cdf54d31a64ad771affb1683fb3fdbf160e59"
+url = "https://github.com/bell-sw/Liberica/releases/download/27.0.1%2B11/bellsoft-jdk27.0.1%2B11-linux-amd64.tar.gz"
 
 [tools.java."platforms.linux-x64-baseline"]
-checksum = "sha256:2f2802d57b5fc414f1ddf6648ba12cc9a6454cf67b32ac95407c018f2e6ab0b0"
-url = "https://download.java.net/java/GA/jdk26.0.1/458fda22e4c54d5ba572ab8d2b22eb83/8/GPL/openjdk-26.0.1_linux-x64_bin.tar.gz"
+checksum = "sha1:be1cdf54d31a64ad771affb1683fb3fdbf160e59"
+url = "https://github.com/bell-sw/Liberica/releases/download/27.0.1%2B11/bellsoft-jdk27.0.1%2B11-linux-amd64.tar.gz"
+
+[tools.java."platforms.linux-x64-musl"]
+checksum = "sha1:5e558487642f0c9457781eaad304b8ed4258c4e1"
+url = "https://github.com/bell-sw/Liberica/releases/download/27.0.1%2B11/bellsoft-jdk27.0.1%2B11-linux-x64-musl.tar.gz"
+
+[tools.java."platforms.linux-x64-musl-baseline"]
+checksum = "sha1:5e558487642f0c9457781eaad304b8ed4258c4e1"
+url = "https://github.com/bell-sw/Liberica/releases/download/27.0.1%2B11/bellsoft-jdk27.0.1%2B11-linux-x64-musl.tar.gz"
 
 [tools.java."platforms.macos-arm64"]
-checksum = "sha256:b2d57405194a312ed4ec6ec08e83b314d3fd2e425e895d704ec5ef8ea6059e17"
-url = "https://download.java.net/java/GA/jdk26.0.1/458fda22e4c54d5ba572ab8d2b22eb83/8/GPL/openjdk-26.0.1_macos-aarch64_bin.tar.gz"
+checksum = "sha1:d4ae36bb658d8b0d479c8e40f258ea5346ec62f4"
+url = "https://github.com/bell-sw/Liberica/releases/download/27.0.1%2B11/bellsoft-jdk27.0.1%2B11-macos-aarch64.tar.gz"
 
 [tools.java."platforms.macos-x64"]
-checksum = "sha256:e52bc05aefe4991329a6a103c9b42ae4b9b77240a9f9d3d12f6a7365db1ae16a"
-url = "https://download.java.net/java/GA/jdk26.0.1/458fda22e4c54d5ba572ab8d2b22eb83/8/GPL/openjdk-26.0.1_macos-x64_bin.tar.gz"
+checksum = "sha1:89e486190bbad1ccb41fc67c76611400735ede5b"
+url = "https://github.com/bell-sw/Liberica/releases/download/27.0.1%2B11/bellsoft-jdk27.0.1%2B11-macos-amd64.tar.gz"
 
 [tools.java."platforms.macos-x64-baseline"]
-checksum = "sha256:e52bc05aefe4991329a6a103c9b42ae4b9b77240a9f9d3d12f6a7365db1ae16a"
-url = "https://download.java.net/java/GA/jdk26.0.1/458fda22e4c54d5ba572ab8d2b22eb83/8/GPL/openjdk-26.0.1_macos-x64_bin.tar.gz"
+checksum = "sha1:89e486190bbad1ccb41fc67c76611400735ede5b"
+url = "https://github.com/bell-sw/Liberica/releases/download/27.0.1%2B11/bellsoft-jdk27.0.1%2B11-macos-amd64.tar.gz"
 
 [tools.java."platforms.windows-x64"]
-checksum = "sha256:b381d30647aed9ff440abed5ab61af01d8578c290cd407c57e064ebc4b0151be"
-url = "https://download.java.net/java/GA/jdk26.0.1/458fda22e4c54d5ba572ab8d2b22eb83/8/GPL/openjdk-26.0.1_windows-x64_bin.zip"
+checksum = "sha1:ffdb7f1421d2e81fc1954fc316e5f4bd145d1598"
+url = "https://github.com/bell-sw/Liberica/releases/download/27.0.1%2B11/bellsoft-jdk27.0.1%2B11-windows-amd64.zip"
 
 [tools.java."platforms.windows-x64-baseline"]
-checksum = "sha256:b381d30647aed9ff440abed5ab61af01d8578c290cd407c57e064ebc4b0151be"
-url = "https://download.java.net/java/GA/jdk26.0.1/458fda22e4c54d5ba572ab8d2b22eb83/8/GPL/openjdk-26.0.1_windows-x64_bin.zip"
+checksum = "sha1:ffdb7f1421d2e81fc1954fc316e5f4bd145d1598"
+url = "https://github.com/bell-sw/Liberica/releases/download/27.0.1%2B11/bellsoft-jdk27.0.1%2B11-windows-amd64.zip"
 
 [[tools.node]]
-version = "24.18.0"
+version = "26.13.1"
 backend = "core:node"
 
 [tools.node."platforms.linux-arm64"]
-checksum = "sha256:6b4484c2190274175df9aa8f28e2d758a819cb1c1fe6ab481e2f95b463ab8508"
-url = "https://nodejs.org/dist/v24.18.0/node-v24.18.0-linux-arm64.tar.gz"
+checksum = "sha256:80a330b35415382878df18d41afbd106ea89bfb3be0087d6608e289a14c5cc7d"
+url = "https://nodejs.org/dist/v26.13.1/node-v26.13.1-linux-arm64.tar.gz"
 
 [tools.node."platforms.linux-arm64-musl"]
-checksum = "sha256:b1c6c2dc31b46dd8fb2322f4fe75b07e775c5120bc37251deeea28f529d4567b"
-url = "https://unofficial-builds.nodejs.org/download/release/v24.18.0/node-v24.18.0-linux-arm64-musl.tar.gz"
+checksum = "sha256:42684e7f1830ef9eaadd040672cba41bbaff9549d834600699f92ee1ee5b1fb1"
+url = "https://unofficial-builds.nodejs.org/download/release/v26.13.1/node-v26.13.1-linux-arm64-musl.tar.gz"
 
 [tools.node."platforms.linux-x64"]
-checksum = "sha256:783130984963db7ba9cbd01089eaf2c2efb055c7c1693c943174b967b3050cb8"
-url = "https://nodejs.org/dist/v24.18.0/node-v24.18.0-linux-x64.tar.gz"
+checksum = "sha256:518674de2b621728a5e4486f5fb3b7d2900bb3cc4aa97969edaa463db99f9778"
+url = "https://nodejs.org/dist/v26.13.1/node-v26.13.1-linux-x64.tar.gz"
 
 [tools.node."platforms.linux-x64-baseline"]
-checksum = "sha256:783130984963db7ba9cbd01089eaf2c2efb055c7c1693c943174b967b3050cb8"
-url = "https://nodejs.org/dist/v24.18.0/node-v24.18.0-linux-x64.tar.gz"
+checksum = "sha256:518674de2b621728a5e4486f5fb3b7d2900bb3cc4aa97969edaa463db99f9778"
+url = "https://nodejs.org/dist/v26.13.1/node-v26.13.1-linux-x64.tar.gz"
 
 [tools.node."platforms.linux-x64-musl"]
-checksum = "sha256:ea58409911e141ec6b19d9178efa2d9185a13295005b1cbf5521b3157eed1d95"
-url = "https://unofficial-builds.nodejs.org/download/release/v24.18.0/node-v24.18.0-linux-x64-musl.tar.gz"
+checksum = "sha256:04bf9ed3e32ea139c9af52f6dd06879ff6f8880555a0aa1183ef2d156c0e02d3"
+url = "https://unofficial-builds.nodejs.org/download/release/v26.13.1/node-v26.13.1-linux-x64-musl.tar.gz"
 
 [tools.node."platforms.linux-x64-musl-baseline"]
-checksum = "sha256:ea58409911e141ec6b19d9178efa2d9185a13295005b1cbf5521b3157eed1d95"
-url = "https://unofficial-builds.nodejs.org/download/release/v24.18.0/node-v24.18.0-linux-x64-musl.tar.gz"
+checksum = "sha256:04bf9ed3e32ea139c9af52f6dd06879ff6f8880555a0aa1183ef2d156c0e02d3"
+url = "https://unofficial-builds.nodejs.org/download/release/v26.13.1/node-v26.13.1-linux-x64-musl.tar.gz"
 
 [tools.node."platforms.macos-arm64"]
-checksum = "sha256:e1a97e14c99c803e96c7339403282ea05a499c32f8d83defe9ef5ec66f979ed1"
-url = "https://nodejs.org/dist/v24.18.0/node-v24.18.0-darwin-arm64.tar.gz"
+checksum = "sha256:aec2514ea1ceb2ba52455e9ec65986f6749a06dd759e5db2a72e6889668c9735"
+url = "https://nodejs.org/dist/v26.13.1/node-v26.13.1-darwin-arm64.tar.gz"
 
 [tools.node."platforms.macos-x64"]
-checksum = "sha256:dfd0dbd3e721503434df7b7205e719f61b3a3a31b2bcf9729b8b91fea240f080"
-url = "https://nodejs.org/dist/v24.18.0/node-v24.18.0-darwin-x64.tar.gz"
+checksum = "sha256:82bb96078a24ca50b9c9a38f2379e6be6d87171fcd400fc14c8934b3bce96e2f"
+url = "https://nodejs.org/dist/v26.13.1/node-v26.13.1-darwin-x64.tar.gz"
 
 [tools.node."platforms.macos-x64-baseline"]
-checksum = "sha256:dfd0dbd3e721503434df7b7205e719f61b3a3a31b2bcf9729b8b91fea240f080"
-url = "https://nodejs.org/dist/v24.18.0/node-v24.18.0-darwin-x64.tar.gz"
+checksum = "sha256:82bb96078a24ca50b9c9a38f2379e6be6d87171fcd400fc14c8934b3bce96e2f"
+url = "https://nodejs.org/dist/v26.13.1/node-v26.13.1-darwin-x64.tar.gz"
 
 [tools.node."platforms.windows-x64"]
-checksum = "sha256:0ae68406b42d7725661da979b1403ec9926da205c6770827f33aac9d8f26e821"
-url = "https://nodejs.org/dist/v24.18.0/node-v24.18.0-win-x64.zip"
+checksum = "sha256:e2edda75bfb089654705cf65a13b58933bfd5f57148e8ebda916f58a2474f1f7"
+url = "https://nodejs.org/dist/v26.13.1/node-v26.13.1-win-x64.zip"
 
 [tools.node."platforms.windows-x64-baseline"]
-checksum = "sha256:0ae68406b42d7725661da979b1403ec9926da205c6770827f33aac9d8f26e821"
-url = "https://nodejs.org/dist/v24.18.0/node-v24.18.0-win-x64.zip"
+checksum = "sha256:e2edda75bfb089654705cf65a13b58933bfd5f57148e8ebda916f58a2474f1f7"
+url = "https://nodejs.org/dist/v26.13.1/node-v26.13.1-win-x64.zip"
 
 [[tools.npm]]
 version = "11.6.4"
@@ -560,10 +569,6 @@ backend = "npm:@cloudbase/cloudbase-mcp"
 [[tools."npm:@earendil-works/pi-coding-agent"]]
 version = "0.87.1"
 backend = "npm:@earendil-works/pi-coding-agent"
-
-[[tools."npm:@mariozechner/pi-coding-agent"]]
-version = "0.73.1"
-backend = "npm:@mariozechner/pi-coding-agent"
 
 [[tools."npm:@murongg/aah-cli"]]
 version = "0.1.12"
